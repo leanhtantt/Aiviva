@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-deep: var(--color-deep-val);
+  --color-primary: var(--color-primary-val);
+  --color-bright: var(--color-bright-val);
+  --color-sky: var(--color-sky-val);
+  --color-pale: var(--color-pale-val);
+  --color-mist: var(--color-mist-val);
+
+  --color-ink: var(--color-ink-val);
+  --color-slate: var(--color-slate-val);
+  --color-silver: var(--color-silver-val);
+  --color-border: var(--color-border-val);
+  --color-canvas: var(--color-canvas-val);
+  --color-surface: var(--color-surface-val);
+
+  --color-accent: var(--color-accent-val);
+  --color-success: var(--color-success-val);
+  --color-danger: var(--color-danger-val);
+  --color-gold: var(--color-gold-val);
+
+  --radius-button: 6px;
+  --radius-input: 6px;
+  --radius-card: 8px;
+  --radius-modal: 8px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 12px 30px rgba(11, 31, 56, 0.08);
+  --shadow-float: 0 18px 48px rgba(11, 31, 56, 0.14);
+}
+
+@layer base {
+  :root {
+    --color-deep-val: #0A3D7A;
+    --color-primary-val: #1455B5;
+    --color-bright-val: #2E7DD8;
+    --color-sky-val: #4FA3E8;
+    --color-pale-val: #C8DEF2;
+    --color-mist-val: #E8F1FA;
+
+    --color-ink-val: #0B1F38;
+    --color-slate-val: #4A5C75;
+    --color-silver-val: #B5C2D2;
+    --color-border-val: #E5EBF3;
+    --color-canvas-val: #F6F9FC;
+    --color-surface-val: #FFFFFF;
+
+    --color-accent-val: #F4A847;
+    --color-success-val: #4CAF7E;
+    --color-danger-val: #E84855;
+    --color-gold-val: #DBB94A;
+  }
+
+  body {
+    background-color: var(--color-canvas-val);
+    color: var(--color-ink-val);
+  }
+}
