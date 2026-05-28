@@ -55,8 +55,8 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`relative text-xs uppercase tracking-widest transition-colors py-1 group whitespace-nowrap ${
-                    isActive ? 'font-bold text-surface' : 'font-medium text-surface/80 hover:text-surface'
+                  className={`relative text-sm uppercase tracking-widest transition-colors py-1 group whitespace-nowrap ${
+                    isActive ? 'font-bold text-surface' : 'font-semibold text-surface/80 hover:text-surface'
                   }`}
                   id={`nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >

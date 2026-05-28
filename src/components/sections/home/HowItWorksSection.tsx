@@ -42,11 +42,7 @@ export function HowItWorksSection({ content }: { content: any }) {
         </div>
       </div>
 
-      <div className="mt-16 text-center">
-        <Badge variant="mist" className="text-slate border-border border cursor-not-allowed px-4 py-2 opacity-60">
-          {content.cta}
-        </Badge>
-      </div>
+
     </Section>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../../ui/Button';
+import { Activity } from 'lucide-react';
 import { PhoneScanMockup } from '../../ui/PhoneScanMockup';
 
 export function HeroSection({ content }: { content: any }) {
@@ -34,29 +35,16 @@ export function HeroSection({ content }: { content: any }) {
           </motion.p>
           
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10"
-          >
-            <Button size="lg" disabled className="font-semibold px-8 w-full sm:w-auto shadow-none !bg-mist/20 !text-surface border border-mist/30 cursor-not-allowed">
-              {content.cta}
-            </Button>
-          </motion.div>
-
-          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col items-start gap-4 sm:gap-5 text-left mx-auto lg:mx-0 w-full max-w-md"
           >
              {content.badges.map((badge: string, idx: number) => (
-                <span key={idx} className="inline-flex items-center gap-1.5 px-3 py-1 bg-surface/10 rounded-full text-xs font-medium text-surface border border-surface/20">
-                  <svg className="w-3 h-3 text-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {badge}
-                </span>
+                <div key={idx} className="flex items-center gap-4 text-xl sm:text-2xl font-medium text-white/95 w-full">
+                  <Activity className="w-7 h-7 text-sky-300 shrink-0" />
+                  <span>{badge}</span>
+                </div>
              ))}
           </motion.div>
         </div>
