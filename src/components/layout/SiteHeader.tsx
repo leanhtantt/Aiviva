@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Activity, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLang } from '@/lib/i18n';
+import { useScrollState, useBodyScrollLock } from '@/lib/hooks';
 
 export function SiteHeader() {
-  const { lang = 'en' } = useParams<{ lang: string }>();
+  const lang = useLang();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isScrolled = useScrollState(20);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -22,16 +17,7 @@ export function SiteHeader() {
   }, [location.pathname]);
 
   // Prevent scrolling when menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMobileMenuOpen]);
+  useBodyScrollLock(isMobileMenuOpen);
 
   const navigation = [
     { name: lang === 'en' ? 'About' : 'Về chúng tôi', href: `/${lang}/about` },

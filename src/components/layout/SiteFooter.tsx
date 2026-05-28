@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Activity } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { useLang } from '@/lib/i18n';
 
 export function SiteFooter() {
-  const { lang = 'en' } = useParams<{ lang: string }>();
+  const lang = useLang();
 
   return (
     <footer className="border-t border-border bg-canvas pt-16 pb-8">

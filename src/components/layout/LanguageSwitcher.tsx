@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { useLang } from '@/lib/i18n';
 
 export function LanguageSwitcher() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { lang = 'en' } = useParams<{ lang: string }>();
+  const lang = useLang();
 
   const toggleLang = () => {
     const nextLang = lang === 'en' ? 'vi' : 'en';

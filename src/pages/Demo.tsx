@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { demoContentEn } from '../content/en/demo';
-import { demoContentVi } from '../content/vi/demo';
-import { Button } from '../components/ui/Button';
-import { PhoneScanMockup } from '../components/ui/PhoneScanMockup';
+import { demoContentEn } from '@/content/en/demo';
+import { demoContentVi } from '@/content/vi/demo';
+import { Button } from '@/components/ui/Button';
+import { PhoneScanMockup } from '@/components/ui/PhoneScanMockup';
 import { Info, User, ScanLine, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLang } from '@/lib/i18n';
+
+const contentMap = {
+  en: demoContentEn,
+  vi: demoContentVi
+};
 
 export default function Demo() {
-  const { lang = 'en' } = useParams<{ lang: string }>();
-  const content = lang === 'en' ? demoContentEn : demoContentVi;
+  const lang = useLang();
+  const content = contentMap[lang];
   const [isScanning, setIsScanning] = useState(false);
 
   return (
