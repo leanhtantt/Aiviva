@@ -12,7 +12,8 @@ const footerTranslations = {
       placeholder: "Enter your email",
       btn: "Subscribe",
       note: "No spam. Only meaningful AIVIVA updates.",
-      success: "Thank you for subscribing! We'll keep you updated."
+      success: "Thank you for subscribing! We'll keep you updated.",
+      resetBtn: "Use another email"
     },
     brand: {
       tagline: "Pioneering Medical AI Technology for a healthier tomorrow.",
@@ -65,7 +66,8 @@ const footerTranslations = {
       placeholder: "Nhập email của bạn",
       btn: "Đăng ký",
       note: "Không spam. Chỉ những cập nhật hữu ích từ AIVIVA.",
-      success: "Cảm ơn bạn đã đăng ký! Chúng tôi sẽ cập nhật những thông tin mới nhất."
+      success: "Cảm ơn bạn đã đăng ký! Chúng tôi sẽ cập nhật những thông tin mới nhất.",
+      resetBtn: "Dùng email khác"
     },
     brand: {
       tagline: "Công nghệ AI y tế tiên phong cho một ngày mai khỏe mạnh hơn.",
@@ -135,8 +137,8 @@ export function SiteFooter() {
     >
       {/* Decorative background glow elements */}
       <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
-        <div className="absolute -bottom-24 -left-20 w-96 h-96 rounded-full bg-primary-val blur-[130px]" />
-        <div className="absolute -top-40 right-10 w-96 h-96 rounded-full bg-sky-val blur-[145px]" />
+        <div className="absolute -bottom-24 -left-20 w-96 h-96 rounded-full bg-primary blur-[130px]" />
+        <div className="absolute -top-40 right-10 w-96 h-96 rounded-full bg-sky blur-[145px]" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] relative z-10 text-white">
@@ -162,11 +164,20 @@ export function SiteFooter() {
             <div className="w-full lg:w-auto min-w-[320px] sm:min-w-[400px]">
               {isSubscribed ? (
                 <div 
-                  className="flex items-center gap-3 bg-success-val/10 border border-success-val/30 rounded-2xl p-4 text-emerald-300 animate-in fade-in slide-in-from-bottom-2 duration-300"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-success/10 border border-success/30 rounded-2xl p-4 text-emerald-300 animate-in fade-in slide-in-from-bottom-2 duration-300"
                   id="newsletter-success-state"
                 >
-                  <CheckCircle className="w-6 h-6 text-success-val shrink-0" />
-                  <p className="text-sm sm:text-base font-medium">{t.newsletter.success}</p>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-6 h-6 text-success shrink-0" />
+                    <p className="text-sm sm:text-base font-medium">{t.newsletter.success}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsSubscribed(false)}
+                    className="text-xs font-semibold text-sky-200 hover:text-white underline cursor-pointer shrink-0 transition-colors"
+                  >
+                    {t.newsletter.resetBtn}
+                  </button>
                 </div>
               ) : (
                 <form 
@@ -293,8 +304,8 @@ export function SiteFooter() {
                 rel="noreferrer" 
                 className="flex items-center gap-3 text-sky-100/70 hover:text-white text-sm transition-colors group"
               >
-                <Globe className="w-4 h-4 text-sky-val shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="truncate">{t.contactLabels.website}</span>
+                <Globe className="w-4 h-4 text-sky shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="truncate">www.aiviva.io</span>
               </a>
 
               <a 
@@ -303,7 +314,7 @@ export function SiteFooter() {
                 rel="noreferrer" 
                 className="flex items-center gap-3 text-sky-100/70 hover:text-white text-sm transition-colors group"
               >
-                <Phone className="w-4 h-4 text-sky-val shrink-0 group-hover:scale-110 transition-transform" />
+                <Phone className="w-4 h-4 text-sky shrink-0 group-hover:scale-110 transition-transform" />
                 <span>+84 938 127 266</span>
               </a>
 
@@ -311,12 +322,12 @@ export function SiteFooter() {
                 href="mailto:hello@aiviva.io" 
                 className="flex items-center gap-3 text-sky-100/70 hover:text-white text-sm transition-colors group"
               >
-                <Mail className="w-4 h-4 text-sky-val shrink-0 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 text-sky shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="truncate">hello@aiviva.io</span>
               </a>
 
               <div className="flex items-start gap-3 text-sky-100/55 text-xs sm:text-sm pt-1 leading-relaxed">
-                <MapPin className="w-4 h-4 text-sky-val shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-sky shrink-0 mt-0.5" />
                 <span>{t.contactLabels.address}</span>
               </div>
             </div>
