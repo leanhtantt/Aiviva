@@ -18,7 +18,7 @@ export function PageShell() {
   return (
     <div className="flex min-h-screen flex-col bg-canvas text-ink font-sans">
       <SiteHeader />
-      <main className={`flex-1 w-full relative ${isHomePage ? '' : 'pt-[4.5rem] md:pt-24'}`}>
+      <main className="flex-1 w-full relative">
         <Outlet />
       </main>
       <SiteFooter />

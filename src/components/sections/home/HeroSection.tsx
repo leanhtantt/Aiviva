@@ -25,7 +25,7 @@ const FloatingBubble = ({ icon, posClass, delay }: any) => (
 export function HeroSection({ content }: { content: any }) {
   return (
     <section 
-      className="w-full relative overflow-hidden bg-surface pt-24 lg:pt-40"
+      className="w-full relative overflow-hidden bg-surface pt-32 sm:pt-36 lg:pt-40"
       style={{
         background: "linear-gradient(120deg, var(--color-deep-val) 0%, var(--color-primary-val) 52%, var(--color-bright-val) 100%)"
       }}

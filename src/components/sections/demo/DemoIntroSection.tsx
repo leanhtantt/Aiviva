@@ -46,7 +46,7 @@ export function DemoIntroSection({ content }: { content: any }) {
   };
 
   return (
-    <Section variant="canvas" className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="w-full bg-canvas pt-32 pb-16 sm:pt-36 lg:pt-40 lg:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-20">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky rounded-full blur-[200px]" />
       </div>
@@ -155,6 +155,6 @@ export function DemoIntroSection({ content }: { content: any }) {
         </div>
 
       </div>
-    </Section>
+    </section>
   );
 }

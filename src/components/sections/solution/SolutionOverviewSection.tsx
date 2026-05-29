@@ -7,7 +7,7 @@ const icons = [Camera, Cpu, ShieldCheck, Activity];
 
 export function SolutionOverviewSection({ content }: { content: any }) {
   return (
-    <Section variant="canvas" className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="w-full bg-canvas pt-32 pb-16 sm:pt-36 lg:pt-40 lg:pb-24 relative overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-sky blur-[150px] mix-blend-screen mix-blend-mode" />
@@ -114,6 +114,6 @@ export function SolutionOverviewSection({ content }: { content: any }) {
            </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
