@@ -121,17 +121,25 @@ export function ProblemSection({ content }: { content: any }) {
                   src="/assets/images/home/home-problem-thinking-woman.png"
                   alt="Thinking Patient"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width={400}
+                  height={430}
                   onError={() => setImgError(true)}
                   className="w-full h-full object-contain relative z-10 filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-500 cursor-pointer"
                 />
               ) : (
                 <div 
                   className="w-5/6 h-5/6 rounded-full bg-gradient-to-tr from-primary/10 to-bright/20 flex flex-col items-center justify-center p-6 text-center border border-primary/20 relative z-10 shadow-inner"
-                  title="Placeholder for home-problem-thinking-woman.png in /public/assets/images/home/"
+                  title="Image Placeholder"
                 >
                   <Sparkles className="w-12 h-12 text-primary animate-pulse mb-3" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary mb-1">Cần thêm hình ảnh</span>
-                  <p className="text-[11px] text-slate leading-tight">Vui lòng tải ảnh <code className="bg-white/60 px-1 py-0.5 rounded text-primary">home-problem-thinking-woman.png</code> vào thư mục <code className="bg-white/60 px-1 py-0.5 rounded text-primary">/public/assets/images/home/</code></p>
+                  {import.meta.env.DEV && (
+                    <>
+                      <span className="text-xs font-bold uppercase tracking-wider text-primary mb-1">Cần thêm hình ảnh</span>
+                      <p className="text-[11px] text-slate leading-tight">Vui lòng tải ảnh <code className="bg-white/60 px-1 py-0.5 rounded text-primary">home-problem-thinking-woman.png</code> vào thư mục <code className="bg-white/60 px-1 py-0.5 rounded text-primary">/public/assets/images/home/</code></p>
+                    </>
+                  )}
                 </div>
               )}
             </motion.div>

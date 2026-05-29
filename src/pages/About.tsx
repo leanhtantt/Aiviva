@@ -1,7 +1,5 @@
 import React from 'react';
 import { useLang } from '@/lib/i18n';
-import { PageShell } from '../components/layout/PageShell';
-
 // Import content
 import { aboutContent as enContent } from '../content/en/about';
 import { aboutContent as viContent } from '../content/vi/about';

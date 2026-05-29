@@ -44,6 +44,10 @@ export function FoundingTeamSection({ content }: { content: any }) {
                       src={member.image} 
                       alt={`${member.name} - ${member.role}`} 
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={300}
                       onError={(e) => {
                         // Fallback to placeholder
                         e.currentTarget.style.display = 'none';

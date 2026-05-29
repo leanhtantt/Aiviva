@@ -70,7 +70,7 @@ export function FeatureSection({ content }: { content: any }) {
       },
       fallback: (
         <div className="relative w-full h-full flex items-center justify-center bg-slate-50 p-6 overflow-hidden">
-          <div className="w-28 h-18 rounded-lg border border-slate-200 bg-white p-3 flex items-center gap-3">
+          <div className="w-28 h-[4.5rem] rounded-lg border border-slate-200 bg-white p-3 flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center">
               <CircleDollarSign className="w-5 h-5 text-amber-600" />
             </div>
@@ -124,6 +124,10 @@ export function FeatureSection({ content }: { content: any }) {
           src={fullPath}
           alt={item.title}
           referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
+          width={800}
+          height={600}
           onError={() => handleImageError(idx)}
           className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover/card:scale-105"
         />
@@ -131,7 +135,7 @@ export function FeatureSection({ content }: { content: any }) {
         config.fallback
       )}
       
-      {hasError && (
+      {hasError && import.meta.env.DEV && (
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-4 text-left">
           <span className="text-[10px] uppercase font-bold text-white/50 tracking-wider mb-0.5">Asset Path info</span>
           <p className="text-[11px] font-mono text-white select-all break-all leading-snug">

@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
           <div>
             <Link to={`/${lang}`} className="flex items-center mb-4 hover:opacity-80 transition-opacity">
-              <img src="/assets/brand/logo-aiviva.png" alt="AIVIVA" className="w-[100px] h-[100px] object-contain" />
+              <img src="/assets/brand/logo-aiviva.png" alt="AIVIVA" className="w-[100px] h-[100px] object-contain" loading="lazy" decoding="async" width={100} height={100} />
             </Link>
             <p className="text-sky-100/85 max-w-xs mb-6 text-sm sm:text-base leading-relaxed">
               {lang === 'en' 
