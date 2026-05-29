@@ -1,6 +1,6 @@
 export const demoContent = {
   intro: {
-    headline: 'Try it now — All you need is your camera',
+    headline: 'Try it now. All you need is your camera',
     subheadline: 'No app download. No signup. Scan right in your browser in 30 seconds.',
     cameraMock: {
       buttonStart: 'Start Scanning',
@@ -12,25 +12,25 @@ export const demoContent = {
     }
   },
   howToUse: {
-    headline: 'How to use — Just 3 simple steps',
+    headline: 'How to use: Just 3 simple steps',
     subheadline: 'No medical knowledge needed. Anyone can do it.',
     steps: [
       {
-        title: 'Step 1 — Prepare',
+        title: 'Step 1: Prepare',
         items: ['Sit still, ensure good lighting, keep face in frame', 'Remove sunglasses or mask if wearing any']
       },
       {
-        title: 'Step 2 — Scan',
-        items: ['Tap "Start scanning" button', 'Hold still for 30 seconds — progress bar shows countdown', 'Animation: face detection circle + heartbeat pulse']
+        title: 'Step 2: Scan',
+        items: ['Tap "Start scanning" button', 'Hold still for 30 seconds (the progress bar shows a countdown)', 'Animation: face detection circle + heartbeat pulse']
       },
       {
-        title: 'Step 3 — Get results',
+        title: 'Step 3: Get results',
         items: ['Results dashboard: Heart rate, SpO₂, Blood pressure, HRV, Stress', 'Each metric has icon + explanation + normal range', 'Share results or save as PDF']
       }
     ]
   },
   sampleResults: {
-    headline: 'Sample scan results — Here\'s what you\'ll get',
+    headline: 'Sample scan results. Here\'s what you\'ll get',
     subheadline: 'Visual dashboard with 5 key vital signs',
     disclaimer: 'Results are for reference only. Consult a doctor for accurate diagnosis.',
     metrics: [
@@ -42,7 +42,7 @@ export const demoContent = {
     ],
     cta: {
       free: 'Want continuous tracking? Create a free account',
-      premium: 'Upgrade to Premium to unlock all metrics — just $7.99/month'
+      premium: 'Upgrade to Premium to unlock all metrics at just $7.99/month'
     }
   }
 };

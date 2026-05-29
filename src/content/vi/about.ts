@@ -1,16 +1,16 @@
 export const aboutContent = {
   hero: {
     headline: 'Nơi y học gặp trí tuệ nhân tạo',
-    subheadline: 'AIVIVA ra đời với sứ mệnh theo dõi sức khỏe — để mọi người đều có thể chủ động chăm sóc bản thân, mọi lúc, mọi nơi.',
+    subheadline: 'AIVIVA ra đời với sứ mệnh theo dõi sức khỏe, giúp mọi người đều có thể chủ động chăm sóc bản thân mọi lúc, mọi nơi.',
   },
   missionVision: {
     mission: {
       title: 'SỨ MỆNH',
-      content: 'Mang công nghệ giám sát sức khỏe cấp lâm sàng đến tay mọi người — không rào cản thiết bị, không rào cản chi phí, không rào cản khoảng cách.',
+      content: 'Mang công nghệ giám sát sức khỏe cấp lâm sàng đến tay mọi người không có rào cản về thiết bị, chi phí, hay khoảng cách.',
     },
     vision: {
       title: 'TẦM NHÌN',
-      content: 'Trở thành nền tảng Telehealth AI #1 Việt Nam vào 2028 và TOP 3 Đông Nam Á vào 2030 — xây dựng hệ sinh thái sức khỏe thông minh từ một bức ảnh selfie.',
+      content: 'Trở thành nền tảng Telehealth AI #1 Việt Nam vào 2028 và TOP 3 Đông Nam Á vào 2030, xây dựng hệ sinh thái sức khỏe thông minh từ một bức ảnh selfie.',
     },
     coreValues: {
       title: 'GIÁ TRỊ CỐT LÕI',
@@ -24,7 +24,7 @@ export const aboutContent = {
   },
   team: {
     headline: 'Đội ngũ dày dạn kinh nghiệm.\nBám sâu vào thị trường.',
-    subheadline: 'Kết hợp chuyên môn y tế, tài chính, công nghệ và phát triển kinh doanh — sẵn sàng đưa AIVIVA từ MVP đến thị trường.',
+    subheadline: 'Kết hợp chuyên môn y tế, tài chính, công nghệ và phát triển kinh doanh, sẵn sàng đưa AIVIVA từ MVP đến thị trường.',
     cta: 'Xem thêm về đội ngũ',
     members: [
       {
@@ -66,8 +66,8 @@ export const aboutContent = {
     ]
   },
   partner: {
-    headline: 'eBeauti — Đối tác công nghệ chiến lược từ Hoa Kỳ',
-    subheadline: 'Nền tảng rPPG AI cốt lõi đã được kiểm chứng lâm sàng tại thị trường Mỹ — AIVIVA bản địa hóa và triển khai tại Việt Nam.',
+    headline: 'eBeauti: Đối tác công nghệ chiến lược từ Hoa Kỳ',
+    subheadline: 'Nền tảng rPPG AI cốt lõi đã được kiểm chứng lâm sàng tại thị trường Mỹ, được AIVIVA bản địa hóa và triển khai tại Việt Nam.',
     bullets: [
       'Bộ xử lý AI rPPG cốt lõi (đã kiểm chứng lâm sàng)',
       'Cơ sở hạ tầng nền tảng khám chữa bệnh từ xa',

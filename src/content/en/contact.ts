@@ -1,7 +1,7 @@
 export const contactContent = {
   formSection: {
     headline: 'Get in touch',
-    subheadline: 'Have a question, want to partner, or need consultation? Send us a message — we respond within 24 hours.',
+    subheadline: 'Have a question, want to partner, or need consultation? Send us a message. We respond within 24 hours.',
     form: {
       nameLabel: 'Full name',
       emailLabel: 'Email',
@@ -45,13 +45,13 @@ export const contactContent = {
     cards: [
       {
         title: 'B2B Partners',
-        desc: 'Integrate AIVIVA into your system — API/SDK ready',
+        desc: 'Integrate AIVIVA into your system. API/SDK ready',
         btnText: 'Explore B2B partnership',
         type: 'primary'
       },
       {
         title: 'Investors',
-        desc: 'AIVIVA is raising Seed Round 2026 — Join us',
+        desc: 'AIVIVA is raising Seed Round 2026. Join us',
         btnText: 'Request investor materials',
         type: 'default'
       },

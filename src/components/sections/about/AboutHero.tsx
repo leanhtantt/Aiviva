@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export function AboutHero({ content }: { content: any }) {
   return (
-    <section className="w-full bg-surface pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden relative">
+    <section className="w-full bg-surface pt-16 pb-16 lg:pt-24 lg:pb-24 overflow-hidden relative">
       {/* Background gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
         <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[100%] rounded-full bg-sky blur-[120px] mix-blend-screen" />

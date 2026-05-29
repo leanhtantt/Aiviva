@@ -13,10 +13,12 @@ export function PageShell() {
     return <Navigate to={`/en${cleanPath}`} replace />;
   }
 
+  const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`;
+
   return (
     <div className="flex min-h-screen flex-col bg-canvas text-ink font-sans">
       <SiteHeader />
-      <main className="flex-1 w-full relative">
+      <main className={`flex-1 w-full relative ${isHomePage ? '' : 'pt-[4.5rem] md:pt-24'}`}>
         <Outlet />
       </main>
       <SiteFooter />

@@ -1,16 +1,16 @@
 export const aboutContent = {
   hero: {
     headline: 'Where medicine meets intelligence',
-    subheadline: 'AIVIVA was founded to democratize health monitoring — so everyone can take charge of their wellbeing, anytime, anywhere.',
+    subheadline: 'AIVIVA was founded to democratize health monitoring, letting everyone take charge of their wellbeing, anytime, anywhere.',
   },
   missionVision: {
     mission: {
       title: 'MISSION',
-      content: 'Bring clinical-grade health monitoring to everyone — no device barrier, no cost barrier, no distance barrier.',
+      content: 'Bring clinical-grade health monitoring to everyone with no device barrier, no cost barrier, and no distance barrier.',
     },
     vision: {
       title: 'VISION',
-      content: 'Become the #1 Telehealth AI platform in Vietnam by 2028 and TOP 3 in Southeast Asia by 2030 — building a smart health ecosystem from a single selfie.',
+      content: 'Become the #1 Telehealth AI platform in Vietnam by 2028 and TOP 3 in Southeast Asia by 2030, building a smart health ecosystem from a single selfie.',
     },
     coreValues: {
       title: 'CORE VALUES',
@@ -24,7 +24,7 @@ export const aboutContent = {
   },
   team: {
     headline: 'Experienced founders.\nDeep market roots.',
-    subheadline: 'Combining healthcare, finance, technology & business development expertise — ready to take AIVIVA from MVP to market.',
+    subheadline: 'Combining healthcare, finance, technology, and business development expertise, we are ready to take AIVIVA from MVP to market.',
     cta: 'Meet the full team',
     members: [
       {
@@ -66,8 +66,8 @@ export const aboutContent = {
     ]
   },
   partner: {
-    headline: 'eBeauti — US strategic technology partner',
-    subheadline: 'Core rPPG AI engine clinically validated in the US market — AIVIVA localizes and deploys across Vietnam.',
+    headline: 'eBeauti: US strategic technology partner',
+    subheadline: 'Core rPPG AI engine clinically validated in the US market, localized and deployed across Vietnam by AIVIVA.',
     bullets: [
       'Core rPPG AI engine (clinically validated)',
       'Telehealth platform infrastructure',

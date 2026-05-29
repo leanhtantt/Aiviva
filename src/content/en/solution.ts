@@ -1,7 +1,7 @@
 export const solutionContent = {
   overview: {
     headline: 'AIVIVA: Scan your face. Know your health.',
-    subheadline: 'A 30-second selfie delivers full vital signs — no physical device required',
+    subheadline: 'A 30-second selfie delivers full vital signs. No physical device required',
     coreTechTitle: 'Core technology',
     coreTechDesc: 'Camera captures micro color changes in facial blood flow → AI analyzes → results delivered.',
     processTitle: '4-step process',
@@ -50,7 +50,7 @@ export const solutionContent = {
         subtitle: '(Forecast & early intervention)',
         features: 'HRV · ECG · Stress · Risk prediction · Early alert',
         isMVP: true,
-        mvpBadge: 'MVP — Jul 2026'
+        mvpBadge: 'MVP (Jul 2026)'
       },
       {
         level: 'L4',
@@ -70,31 +70,31 @@ export const solutionContent = {
   },
   fourPillars: {
     headline: 'Four ways AIVIVA transforms your health',
-    subheadline: 'From hospital to home — one platform, four solutions',
+    subheadline: 'From hospital to home: one platform, four solutions',
     pillars: [
       {
-        title: '1. Smart triage — Ease the burden on healthcare systems',
-        desc: 'Remote health screening before patients arrive at medical facilities — helping hospitals and clinics focus resources on cases that truly need in-person care.'
+        title: '1. Smart triage: Ease the burden on healthcare systems',
+        desc: 'Remote health screening before patients arrive at medical facilities, helping hospitals and clinics focus resources on cases that truly need in-person care.'
       },
       {
-        title: '2. Chronic care — Managed at home, peace of mind daily',
-        desc: 'Diabetes, hypertension, heart conditions — monitor every morning in 30 seconds. No appointments. No waiting. Data sent straight to your doctor.'
+        title: '2. Chronic care: Managed at home, peace of mind daily',
+        desc: 'Diabetes, hypertension, heart conditions: monitor every morning in 30 seconds with no appointments, no waiting, and data sent straight to your doctor.'
       },
       {
-        title: '3. Early detection — Proactive prevention',
+        title: '3. Early detection: Proactive prevention',
         desc: 'AI analyzes health trends over time. Get alerts when metrics go off-track. Act before it\'s too late.'
       },
       {
         title: '4. Live well, feel beautiful every day',
-        desc: 'Understand your body to fine-tune your lifestyle, sleep, and stress levels — making wellness a gentle daily habit, not a burden.'
+        desc: 'Understand your body to fine-tune your lifestyle, sleep, and stress levels, making wellness a gentle daily habit rather than a burden.'
       }
     ]
   },
   whoWeServe: {
-    headline: 'Who we serve — What we solve',
+    headline: 'Who we serve and what we solve',
     subheadline: 'Serving both individual users (B2C) and enterprise clients (B2B)',
     b2c: {
-      title: '👤 B2C — End users:',
+      title: '👤 B2C: End users:',
       items: [
         'Chronic patients 35–65 & elderly → Daily monitoring at home, zero device needed',
         'Health-conscious 25–45 → Track health via phone, anytime',
@@ -102,7 +102,7 @@ export const solutionContent = {
       ]
     },
     b2b: {
-      title: '🏢 B2B — Enterprise:',
+      title: '🏢 B2B: Enterprise:',
       items: [
         'Clinics & telehealth platforms → API/SDK integration',
         'Insurance companies → Accurate risk underwriting data',
@@ -112,6 +112,6 @@ export const solutionContent = {
   },
   competitiveAdvantage: {
     headline: 'Zero friction · Privacy first · Instant results',
-    subheadline: 'AIVIVA fully solves the treatment compliance problem — no device, no hassle'
+    subheadline: 'AIVIVA fully solves the treatment compliance problem: no device, no hassle'
   }
 };

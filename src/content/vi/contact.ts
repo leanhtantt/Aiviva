@@ -1,7 +1,7 @@
 export const contactContent = {
   formSection: {
     headline: 'Liên hệ với chúng tôi',
-    subheadline: 'Bạn có câu hỏi, muốn hợp tác, hay cần tư vấn? Gửi tin nhắn — chúng tôi phản hồi trong 24 giờ.',
+    subheadline: 'Bạn có câu hỏi, muốn hợp tác, hay cần tư vấn? Gửi tin nhắn. Chúng tôi phản hồi trong 24 giờ.',
     form: {
       nameLabel: 'Họ và tên',
       emailLabel: 'Email',
@@ -45,13 +45,13 @@ export const contactContent = {
     cards: [
       {
         title: 'Đối tác B2B',
-        desc: 'Tích hợp AIVIVA vào hệ thống của bạn — API/SDK sẵn sàng',
+        desc: 'Tích hợp AIVIVA vào hệ thống của bạn. API/SDK sẵn sàng',
         btnText: 'Tìm hiểu gói đối tác B2B',
         type: 'primary'
       },
       {
         title: 'Nhà đầu tư',
-        desc: 'AIVIVA đang trong vòng Seed Round 2026 — Tham gia cùng chúng tôi',
+        desc: 'AIVIVA đang trong vòng Seed Round 2026. Tham gia cùng chúng tôi',
         btnText: 'Nhận tài liệu đầu tư',
         type: 'default'
       },
