@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Section } from '../../ui/Section';
 import { Button } from '../../ui/Button';
 import { ScanLine, CheckCircle2 } from 'lucide-react';
 

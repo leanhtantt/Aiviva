@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Section } from '../../ui/Section';
 import { ContactForm } from './ContactForm';
 import { DirectContactInfo } from './DirectContactInfo';
 

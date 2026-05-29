@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Section } from '../../ui/Section';
 import { Camera, Cpu, ShieldCheck, Activity } from 'lucide-react';
 
 const icons = [Camera, Cpu, ShieldCheck, Activity];
