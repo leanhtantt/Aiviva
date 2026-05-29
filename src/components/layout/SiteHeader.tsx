@@ -20,6 +20,7 @@ export function SiteHeader() {
   useBodyScrollLock(isMobileMenuOpen);
 
   const navigation = [
+    { name: lang === 'en' ? 'Home' : 'Trang chủ', href: `/${lang}` },
     { name: lang === 'en' ? 'About' : 'Về chúng tôi', href: `/${lang}/about` },
     { name: lang === 'en' ? 'Solutions' : 'Giải pháp', href: `/${lang}/solution` },
     { name: lang === 'en' ? 'News' : 'Tin tức', href: `/${lang}/news` },
@@ -48,8 +49,9 @@ export function SiteHeader() {
           {/* Center - Navigation */}
           <nav className="hidden md:flex flex-1 justify-center gap-4 lg:gap-8">
             {navigation.map((item) => {
-              const isActive = location.pathname.startsWith(item.href) && item.href !== `/${lang}` || (item.href === `/${lang}` && location.pathname === `/${lang}`);
-              // Note: adjusted isActive slightly to handle home page but the nav doesn't have home link right now.
+              const isActive = item.href === `/${lang}`
+                ? location.pathname === `/${lang}`
+                : location.pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
@@ -127,7 +129,9 @@ export function SiteHeader() {
               </div>
               <div className="p-4 flex flex-col gap-2 overflow-y-auto">
                 {navigation.map((item) => {
-                  const isActive = location.pathname.startsWith(item.href);
+                  const isActive = item.href === `/${lang}`
+                    ? location.pathname === `/${lang}`
+                    : location.pathname.startsWith(item.href);
                   return (
                     <Link
                       key={item.href}
