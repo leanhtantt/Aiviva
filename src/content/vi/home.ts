@@ -1,7 +1,7 @@
 export const homeContentVi = {
   hero: {
     headline: "Chụp selfie 30 giây.\nHiểu sức khỏe của bạn.",
-    subheadline: "Theo dõi nhịp tim, SpO₂, huyết áp, chỉ số căng thẳng — chỉ bằng camera điện thoại. Không cần thiết bị đeo.",
+    subheadline: "Theo dõi nhịp tim, SpO₂, huyết áp, chỉ số căng thẳng chỉ bằng camera điện thoại. Không cần thiết bị đeo.",
     badges: [
       "Độ chính xác >98%",
       "Không lưu trữ dữ liệu",
@@ -21,8 +21,8 @@ export const homeContentVi = {
     cta: "AIVIVA giải quyết tất cả ↓"
   },
   howItWorks: {
-    headline: "Chỉ 4 bước — từ camera đến kết quả sức khỏe",
-    subheadline: "Công nghệ rPPG + Edge AI — không lưu trữ, không thiết bị phụ",
+    headline: "Chỉ 4 bước từ camera đến kết quả sức khỏe",
+    subheadline: "Công nghệ rPPG + Edge AI không lưu trữ, không thiết bị phụ",
     steps: [
       {
         title: "Mở camera",
@@ -66,7 +66,7 @@ export const homeContentVi = {
     ]
   },
   trust: {
-    headline: "Được kiểm chứng — tại Mỹ và Việt Nam",
+    headline: "Được kiểm chứng tại Mỹ và Việt Nam",
     subheadline: "Nền tảng công nghệ từ đối tác Hoa Kỳ, bản địa hóa 100% cho thị trường Việt",
     signals: [
       "Nền tảng đã validate tại thị trường Mỹ",
@@ -77,7 +77,7 @@ export const homeContentVi = {
   },
   cta: {
     headline: "Sẵn sàng theo dõi sức khỏe không cần thiết bị?",
-    subheadline: "Bắt đầu miễn phí ngay hôm nay — không cần tải app, không cần đăng ký thẻ tín dụng",
+    subheadline: "Bắt đầu miễn phí ngay hôm nay không cần tải app, không cần đăng ký thẻ tín dụng",
     primary: "Coming soon",
     note: "Miễn phí · Không cần thiết bị · Bảo mật tuyệt đối"
   }

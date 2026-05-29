@@ -21,15 +21,18 @@ export function FeatureSection({ content }: { content: any }) {
       imageName: 'home-features-no-device.vi.jpg',
       folderPath: '/assets/images/home/',
       icon: Smartphone,
-      color: 'text-blue-600 dark:text-blue-400',
-      outlineColor: 'border-slate-200 dark:border-slate-800',
+      style: {
+        textBg: "bg-[#eaf3fa]", // Light blue
+        iconColor: "text-blue-500",
+        orderTextFirst: false,
+        imageAspect: "aspect-[4/3] lg:aspect-[1/1]",
+      },
       fallback: (
-        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-6 overflow-hidden">
-          {/* Static mockup representing scan layout */}
-          <div className="w-16 h-28 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-2 flex flex-col justify-between">
-            <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full" />
+        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 p-6 overflow-hidden">
+          <div className="w-16 h-28 rounded-xl border border-slate-200 bg-white p-2 flex flex-col justify-between">
+            <div className="w-full h-1.5 bg-slate-100 rounded-full" />
             <div className="flex-1 flex items-center justify-center my-2">
-              <Smartphone className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+              <Smartphone className="w-8 h-8 text-blue-600" />
             </div>
             <div className="w-full h-1 bg-emerald-500 rounded-full" />
           </div>
@@ -40,14 +43,17 @@ export function FeatureSection({ content }: { content: any }) {
       imageName: 'home-features-thirty-seconds.vi.jpg',
       folderPath: '/assets/images/home/',
       icon: Timer,
-      color: 'text-emerald-600 dark:text-emerald-400',
-      outlineColor: 'border-slate-200 dark:border-slate-800',
+      style: {
+        textBg: "bg-[#fcece6]", // Peach
+        iconColor: "text-orange-500",
+        orderTextFirst: true,
+        imageAspect: "aspect-[4/3] lg:aspect-[3/4]",
+      },
       fallback: (
-        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-6 overflow-hidden">
-          {/* Static clean clock progress mockup */}
-          <div className="w-24 h-24 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex flex-col items-center justify-center">
-            <Timer className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mb-1" />
-            <span className="text-xs font-bold text-slate-800 dark:text-slate-200">30s</span>
+        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 p-6 overflow-hidden">
+          <div className="w-24 h-24 rounded-full border border-slate-200 bg-white flex flex-col items-center justify-center">
+            <Timer className="w-8 h-8 text-emerald-600 mb-1" />
+            <span className="text-xs font-bold text-slate-800">30s</span>
           </div>
         </div>
       )
@@ -56,18 +62,21 @@ export function FeatureSection({ content }: { content: any }) {
       imageName: 'home-features-free-start.vi.jpg',
       folderPath: '/assets/images/home/',
       icon: CircleDollarSign,
-      color: 'text-amber-600 dark:text-amber-400',
-      outlineColor: 'border-slate-200 dark:border-slate-800',
+      style: {
+        textBg: "bg-[#fae8ef]", // Pink
+        iconColor: "text-pink-500",
+        orderTextFirst: false,
+        imageAspect: "aspect-[4/3] lg:aspect-[16/10]",
+      },
       fallback: (
-        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-6 overflow-hidden">
-          {/* Static neat money card mockup */}
-          <div className="w-28 h-18 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-amber-50 dark:bg-amber-950/30 flex items-center justify-center">
-              <CircleDollarSign className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 p-6 overflow-hidden">
+          <div className="w-28 h-18 rounded-lg border border-slate-200 bg-white p-3 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center">
+              <CircleDollarSign className="w-5 h-5 text-amber-600" />
             </div>
             <div className="text-left">
-              <div className="w-10 h-1 bg-slate-200 dark:bg-slate-800 rounded-full mb-1" />
-              <span className="text-xs font-bold text-amber-600 dark:text-amber-400">$0</span>
+              <div className="w-10 h-1 bg-slate-200 rounded-full mb-1" />
+              <span className="text-xs font-bold text-amber-600">$0</span>
             </div>
           </div>
         </div>
@@ -77,29 +86,71 @@ export function FeatureSection({ content }: { content: any }) {
       imageName: 'home-features-edge-ai.vi.jpg',
       folderPath: '/assets/images/home/',
       icon: ShieldCheck,
-      color: 'text-violet-600 dark:text-violet-400',
-      outlineColor: 'border-slate-200 dark:border-slate-800',
+      style: {
+        textBg: "bg-[#e5f5f4]", // Teal
+        iconColor: "text-teal-500",
+        orderTextFirst: true,
+        imageAspect: "aspect-[4/3] lg:aspect-[4/5]",
+      },
       fallback: (
-        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-6 overflow-hidden">
-          {/* Static shield lock secure state mockup */}
-          <div className="w-24 h-24 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex flex-col items-center justify-center gap-1">
-            <ShieldCheck className="w-8 h-8 text-violet-600 dark:text-violet-400" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Secure</span>
+        <div className="relative w-full h-full flex items-center justify-center bg-slate-50 p-6 overflow-hidden">
+          <div className="w-24 h-24 rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center gap-1">
+            <ShieldCheck className="w-8 h-8 text-violet-600" />
+            <span className="text-[10px] font-bold uppercase tracking-wider text-violet-600">Secure</span>
           </div>
         </div>
       )
     },
   ];
 
+  const renderTextCard = (item: any, config: any) => (
+    <div className={`rounded-[2rem] p-6 lg:p-8 flex flex-col w-full h-full min-h-[300px] ${config.style.textBg}`}>
+      <div className={`mb-6 ${config.style.iconColor}`}>
+        <config.icon className="w-8 h-8" strokeWidth={1.5} />
+      </div>
+      <h3 className="text-xl lg:text-[1.35rem] font-bold text-slate-900 mb-8">
+        {item.title}
+      </h3>
+      <p className="text-[1.1rem] lg:text-[1.25rem] leading-snug mt-auto text-slate-800 font-normal">
+        {item.desc}
+      </p>
+    </div>
+  );
+
+  const renderImageCard = (item: any, config: any, idx: number, hasError: boolean, fullPath: string) => (
+    <div className={`w-full ${config.style.imageAspect} rounded-[2rem] overflow-hidden flex items-center justify-center relative bg-surface border border-slate-200/50 shadow-sm transition-all duration-300 group/card`}>
+      {!hasError ? (
+        <img
+          src={fullPath}
+          alt={item.title}
+          referrerPolicy="no-referrer"
+          onError={() => handleImageError(idx)}
+          className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover/card:scale-105"
+        />
+      ) : (
+        config.fallback
+      )}
+      
+      {hasError && (
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-4 text-left">
+          <span className="text-[10px] uppercase font-bold text-white/50 tracking-wider mb-0.5">Asset Path info</span>
+          <p className="text-[11px] font-mono text-white select-all break-all leading-snug">
+            public{fullPath}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <Section variant="canvas" className="py-24 relative overflow-hidden">
       {/* Title block */}
-      <div className="text-center mb-20 max-w-3xl mx-auto">
+      <div className="text-center mb-16 lg:mb-24 max-w-3xl mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl lg:text-5xl font-bold text-deep mb-6 leading-tight tracking-tight animate-fade-in"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-deep mb-6 leading-tight tracking-tight animate-fade-in"
         >
           {content.headline}
         </motion.h2>
@@ -115,11 +166,12 @@ export function FeatureSection({ content }: { content: any }) {
       </div>
 
       {/* Grid of features */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         {content.items.map((item: any, idx: number) => {
           const config = featureConfigs[idx];
           const hasError = imgErrors[idx];
           const fullPath = `${config.folderPath}${config.imageName}`;
+          const isTextFirstOnDesktop = config.style.orderTextFirst;
           
           return (
             <motion.div
@@ -128,44 +180,17 @@ export function FeatureSection({ content }: { content: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group flex flex-col w-full text-left"
+              className="flex flex-col gap-6 w-full h-full"
             >
-              {/* [shape chứa hình ảnh, bo góc] */}
-              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden flex items-center justify-center relative bg-surface transition-all duration-300">
-                {!hasError ? (
-                  <img
-                    src={fullPath}
-                    alt={item.title}
-                    referrerPolicy="no-referrer"
-                    onError={() => handleImageError(idx)}
-                    className="w-full h-full object-cover relative z-10 transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  config.fallback
-                )}
-
-                {/* Always-on dynamic overlay guide when using fallback */}
-                {hasError && (
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-4 text-left">
-                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-wider mb-0.5">Asset Path info</span>
-                    <p className="text-[11px] font-mono text-white select-all break-all leading-snug">
-                      public{fullPath}
-                    </p>
-                  </div>
-                )}
+              {/* On mobile, standard stack. On desktop, reverse dynamically based on config */}
+              <div className={`flex flex-col gap-6 h-full ${isTextFirstOnDesktop ? 'flex-col lg:flex-col-reverse' : 'flex-col'}`}>
+                <div className="flex w-full shrink-0">
+                   {renderImageCard(item, config, idx, hasError, fullPath)}
+                </div>
+                <div className="flex w-full grow">
+                   {renderTextCard(item, config)}
+                </div>
               </div>
-
-              {/* <nội dung nằm phía ngoài hình ảnh, canh lề trái> */}
-              <div className="mt-6 flex flex-col text-left pl-1">
-                <h3 className="text-xl font-bold text-ink mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
-                  <config.icon className="w-5 h-5 text-primary/70 block lg:hidden" />
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base text-slate leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-
             </motion.div>
           );
         })}

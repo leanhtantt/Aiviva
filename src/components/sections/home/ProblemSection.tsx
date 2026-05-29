@@ -51,7 +51,7 @@ export function ProblemSection({ content }: { content: any }) {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl lg:text-5xl font-bold text-deep mb-6 leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-deep mb-6 leading-tight tracking-tight"
           >
             {content.headline}
           </motion.h2>

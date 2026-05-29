@@ -40,9 +40,8 @@ export function SiteHeader() {
           
           {/* Left - Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to={`/${lang}`} className="flex items-center gap-2 text-surface hover:text-surface/80 transition-colors">
-              <Activity className="h-6 w-6" />
-              <span className="text-xl font-bold tracking-tight">AIVIVA</span>
+            <Link to={`/${lang}`} className="flex items-center hover:opacity-80 transition-opacity">
+              <img src="/assets/brand/logo-aiviva-head.png" alt="AIVIVA" className="h-[40px] w-auto object-contain" />
             </Link>
           </div>
           

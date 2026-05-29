@@ -14,9 +14,8 @@ export function SiteFooter() {
       <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] text-white">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
           <div>
-            <Link to={`/${lang}`} className="flex items-center gap-2 text-white mb-4 hover:text-sky-200 transition-colors">
-              <Activity className="h-6 w-6 text-sky-300" />
-              <span className="text-xl font-bold tracking-tight">AIVIVA</span>
+            <Link to={`/${lang}`} className="flex items-center mb-4 hover:opacity-80 transition-opacity">
+              <img src="/assets/brand/logo-aiviva.png" alt="AIVIVA" className="w-[100px] h-[100px] object-contain" />
             </Link>
             <p className="text-sky-100/85 max-w-xs mb-6 text-sm sm:text-base leading-relaxed">
               {lang === 'en' 

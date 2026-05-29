@@ -1,7 +1,7 @@
 export const homeContentEn = {
   hero: {
     headline: "Scan your face.\nKnow your health.",
-    subheadline: "Monitor heart rate, SpO₂, blood pressure & stress index — with just your phone camera. No wearable needed.",
+    subheadline: "Monitor heart rate, SpO₂, blood pressure & stress index with just your phone camera. No wearable needed.",
     badges: [
       ">98% accuracy",
       "Zero data stored",
@@ -13,7 +13,7 @@ export const homeContentEn = {
     headline: "Healthcare monitoring is failing you",
     subheadline: "4 barriers millions face every single day",
     items: [
-      "Wearables are disruptive — charging friction, skin irritation, data gaps",
+      "Wearables are disruptive: charging friction, skin irritation, data gaps",
       "Traditional devices cost $200–$400",
       "2–4 day wait just for routine monitoring",
       "Crowded waiting rooms create cross-infection risk"
@@ -22,7 +22,7 @@ export const homeContentEn = {
   },
   howItWorks: {
     headline: "4 steps from camera to health results",
-    subheadline: "rPPG + Edge AI technology — no storage, no hardware required",
+    subheadline: "rPPG + Edge AI technology: no storage, no hardware required",
     steps: [
       {
         title: "Open camera",
@@ -38,7 +38,7 @@ export const homeContentEn = {
       },
       {
         title: "Get results",
-        desc: "Heart rate, HRV, SpO₂, blood pressure, stress — in 30 seconds"
+        desc: "Heart rate, HRV, SpO₂, blood pressure, stress in 30 seconds"
       }
     ],
     cta: "Coming soon"
@@ -66,7 +66,7 @@ export const homeContentEn = {
     ]
   },
   trust: {
-    headline: "Validated — in the US and Vietnam",
+    headline: "Validated in the US and Vietnam",
     subheadline: "US-grade technology platform, 100% localized for Southeast Asia",
     signals: [
       "Platform clinically validated in US market",
@@ -77,7 +77,7 @@ export const homeContentEn = {
   },
   cta: {
     headline: "Ready to monitor your health without any device?",
-    subheadline: "Start free today — no app download required, no credit card needed",
+    subheadline: "Start free today, no app download required, no credit card needed",
     primary: "Coming soon",
     note: "Free · No hardware · Privacy first"
   }
