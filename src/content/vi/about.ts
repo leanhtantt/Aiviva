@@ -37,7 +37,7 @@ export const aboutContent = {
         name: 'Eric Nguyen',
         role: 'CFO',
         description: 'Chuyên gia tài chính & cấu trúc vốn. Chuẩn bị hồ sơ gọi vốn và quan hệ nhà đầu tư.',
-        image: '/assets/team/eric-nguyen.jpg',
+        image: '/assets/team/eric-nguyen.png',
       },
       {
         name: 'Hang Dinh',
@@ -55,7 +55,7 @@ export const aboutContent = {
         name: 'Tuan Kieu Quang',
         role: 'CGRO & Legal',
         description: 'Quản trị rủi ro, tuân thủ pháp lý, đăng ký quy định (MOH, ISO, GDPR).',
-        image: '/assets/team/tuan-kieu.jpg',
+        image: '/assets/team/tuan-kieu.png',
       },
       {
         name: 'Nguyen Van Mui',
