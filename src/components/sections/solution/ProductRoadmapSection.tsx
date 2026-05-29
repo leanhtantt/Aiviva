@@ -53,19 +53,19 @@ export function ProductRoadmapSection({ content }: { content: any }) {
                     </div>
 
                     <div className={`flex-1 w-full pl-20 md:pl-0 ${isEven ? 'md:text-right' : 'md:text-left'}`}>
-                      <div className={`bg-white rounded-3xl p-6 sm:p-8 border shadow-sm relative group overflow-hidden ${level.isMVP ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
+                      <div className={`rounded-3xl p-6 sm:p-8 border relative group overflow-hidden transition-all duration-300 hover:-translate-y-1 ${level.isMVP ? 'bg-gradient-to-br from-primary to-deep text-white shadow-[0_8px_30px_rgba(79,163,232,0.3)] border-sky/30' : 'bg-white border-border shadow-sm hover:shadow-md'}`}>
                         {level.isMVP && (
-                          <div className={`absolute top-0 ${isEven ? 'md:left-0' : 'md:right-0'} left-0 w-full sm:w-auto px-4 md:px-6 py-1 bg-gradient-to-r from-primary to-sky text-white text-xs sm:text-sm font-bold uppercase tracking-wider md:rounded-br-2xl md:text-left text-center block md:inline-block`}>
+                          <div className={`absolute top-0 ${isEven ? 'md:left-0' : 'md:right-0'} left-0 w-full sm:w-auto px-5 md:px-8 py-2 bg-white text-primary text-xs sm:text-sm font-extrabold uppercase tracking-widest md:rounded-br-2xl md:text-left text-center block md:inline-block shadow-sm`}>
                             {level.mvpBadge}
                           </div>
                         )}
-                        <h3 className={`text-2xl sm:text-3xl font-bold text-deep mb-2 ${level.isMVP ? 'mt-6 sm:mt-8' : ''}`}>
+                        <h3 className={`text-2xl sm:text-3xl font-bold tracking-tight mb-2 transition-colors ${level.isMVP ? 'mt-8 sm:mt-10 text-white' : 'text-deep group-hover:text-primary'}`}>
                           {level.title}
                         </h3>
-                        <p className="text-primary font-medium mb-6">{level.subtitle}</p>
+                        <p className={`font-medium mb-6 ${level.isMVP ? 'text-sky' : 'text-primary'}`}>{level.subtitle}</p>
                         
-                        <div className="py-4 border-t border-border mt-auto">
-                          <p className="text-slate text-sm sm:text-base leading-relaxed">
+                        <div className={`py-4 border-t mt-auto ${level.isMVP ? 'border-white/20' : 'border-border'}`}>
+                          <p className={`text-sm sm:text-base leading-relaxed ${level.isMVP ? 'text-white/80' : 'text-slate group-hover:text-ink'}`}>
                             {level.features}
                           </p>
                         </div>

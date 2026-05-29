@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import { PageShell } from './components/layout/PageShell';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,6 +16,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/en" replace />} />
         
