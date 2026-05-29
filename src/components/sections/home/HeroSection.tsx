@@ -25,14 +25,14 @@ const FloatingBubble = ({ icon, posClass, delay }: any) => (
 export function HeroSection({ content }: { content: any }) {
   return (
     <section 
-      className="w-full relative overflow-hidden bg-surface pt-32 lg:pt-40"
+      className="w-full relative overflow-hidden bg-surface pt-24 lg:pt-40"
       style={{
         background: "linear-gradient(120deg, var(--color-deep-val) 0%, var(--color-primary-val) 52%, var(--color-bright-val) 100%)"
       }}
     >
       <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] relative z-20 flex flex-col lg:flex-row items-center justify-between gap-0 min-h-[500px]">
         
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left pt-10 lg:pt-10 pb-10 lg:pb-24 w-full lg:max-w-2xl xl:max-w-3xl z-20">
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left pt-6 lg:pt-10 pb-4 lg:pb-24 w-full lg:max-w-2xl xl:max-w-3xl z-20">
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function HeroSection({ content }: { content: any }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="max-w-xl text-lg sm:text-xl text-mist/90 mb-10 leading-relaxed"
+            className="max-w-xl text-lg sm:text-xl text-mist/90 mb-7 lg:mb-10 leading-relaxed"
           >
             {content.subheadline}
           </motion.p>
@@ -56,7 +56,7 @@ export function HeroSection({ content }: { content: any }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col items-start gap-4 sm:gap-5 text-left mx-auto lg:mx-0 w-full max-w-md"
+            className="flex flex-col items-start gap-3 sm:gap-4 lg:gap-5 text-left mx-auto lg:mx-0 w-full max-w-md"
           >
              {content.badges.map((badge: string, idx: number) => (
                 <div key={idx} className="flex items-center gap-4 text-xl sm:text-2xl font-medium text-white/95 w-full">
@@ -66,7 +66,7 @@ export function HeroSection({ content }: { content: any }) {
              ))}
              
              {content.cta && (
-               <div className="mt-8">
+               <div className="mt-5 lg:mt-8">
                  <Button 
                    size="lg" 
                    className="relative overflow-hidden w-full sm:w-auto px-10 shadow-lg !bg-white !text-primary font-bold !rounded-full cursor-pointer opacity-100 transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] hover:shadow-xl"
@@ -105,7 +105,7 @@ export function HeroSection({ content }: { content: any }) {
          initial={{ opacity: 0, y: 30 }}
          animate={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.8, delay: 0.2 }}
-         className="w-full flex justify-center lg:justify-end lg:absolute lg:bottom-0 lg:right-[5%] xl:right-[10%] lg:w-[45%] lg:items-end pointer-events-none z-10 mt-8 lg:mt-0"
+         className="w-full flex justify-center lg:justify-end lg:absolute lg:bottom-0 lg:right-[5%] xl:right-[10%] lg:w-[45%] lg:items-end pointer-events-none z-10 -mt-4 lg:mt-0"
       >
         <div className="relative w-full max-w-[500px] lg:max-w-none flex justify-center lg:justify-end mx-auto lg:mx-0">
           <video 
@@ -113,7 +113,7 @@ export function HeroSection({ content }: { content: any }) {
              loop 
              muted 
              playsInline
-             className="w-full h-auto max-h-[50vh] lg:max-h-[90%] xl:max-h-[650px] object-contain object-bottom pointer-events-auto leading-none block"
+             className="w-full h-auto max-h-[42vh] lg:max-h-[90%] xl:max-h-[650px] object-contain object-bottom pointer-events-auto leading-none block"
           >
             <source src="/assets/video/woman_undergoing_AI_facial_scan.webm" type="video/webm" />
           </video>

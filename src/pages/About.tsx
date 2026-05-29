@@ -1,27 +1,27 @@
 import React from 'react';
 import { useLang } from '@/lib/i18n';
+import { PageShell } from '../components/layout/PageShell';
 
-const contentMap = {
-  en: {
-    title: 'About Us',
-    description: 'We are transforming healthcare with AI.',
-  },
-  vi: {
-    title: 'Về chúng tôi',
-    description: 'Chúng tôi đang chuyển đổi y tế bằng AI.',
-  }
-};
+// Import content
+import { aboutContent as enContent } from '../content/en/about';
+import { aboutContent as viContent } from '../content/vi/about';
+
+// Import sections
+import { AboutHero } from '../components/sections/about/AboutHero';
+import { MissionVisionSection } from '../components/sections/about/MissionVisionSection';
+import { FoundingTeamSection } from '../components/sections/about/FoundingTeamSection';
+import { TechnologyPartnerSection } from '../components/sections/about/TechnologyPartnerSection';
 
 export default function About() {
   const lang = useLang();
-  const content = contentMap[lang];
+  const content = lang === 'en' ? enContent : viContent;
 
   return (
-    <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] py-20 relative z-10 w-full">
-        <h1 className="text-3xl font-bold text-ink mb-4">{content.title}</h1>
-        <p className="text-slate max-w-2xl text-lg">
-            {content.description}
-        </p>
+    <div className="w-full flex-1 flex flex-col">
+      <AboutHero content={content.hero} />
+      <MissionVisionSection content={content.missionVision} />
+      <FoundingTeamSection content={content.team} />
+      <TechnologyPartnerSection content={content.partner} />
     </div>
   );
 }

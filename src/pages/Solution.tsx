@@ -1,16 +1,27 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLang } from '@/lib/i18n';
+
+// Import content
+import { solutionContent as enContent } from '../content/en/solution';
+import { solutionContent as viContent } from '../content/vi/solution';
+
+// Import sections
+import { SolutionOverviewSection } from '../components/sections/solution/SolutionOverviewSection';
+import { ProductRoadmapSection } from '../components/sections/solution/ProductRoadmapSection';
+import { SolutionPillarsSection } from '../components/sections/solution/SolutionPillarsSection';
+import { AudienceSection } from '../components/sections/solution/AudienceSection';
+// Competitive advantage is temporarily blank according to instructions
 
 export default function Solution() {
-  const { lang = 'en' } = useParams<{ lang: string }>();
+  const lang = useLang();
+  const content = lang === 'en' ? enContent : viContent;
+
   return (
-    <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] py-20 relative z-10 w-full">
-        <h1 className="text-3xl font-bold text-ink mb-4">{lang === 'en' ? 'Our Solutions' : 'Giải pháp của chúng tôi'}</h1>
-        <p className="text-slate max-w-2xl text-lg">
-            {lang === 'en' 
-            ? 'Innovative rPPG-powered health tracking.' 
-            : 'Đo lường sức khỏe dựa trên rPPG cải tiến.'}
-        </p>
+    <div className="w-full flex-1 flex flex-col">
+       <SolutionOverviewSection content={content.overview} />
+       <ProductRoadmapSection content={content.roadmap} />
+       <SolutionPillarsSection content={content.fourPillars} />
+       <AudienceSection content={content.whoWeServe} />
     </div>
   );
 }
