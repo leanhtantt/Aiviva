@@ -1,3 +1,9 @@
+export type NewsArticleBlock =
+  | { type: 'heading'; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'quote'; text: string };
+
 export interface NewsArticle {
   id: string;
   slug: string;
@@ -8,6 +14,10 @@ export interface NewsArticle {
   readTime: string;
   image?: string;
   featured?: boolean;
+  content?: NewsArticleBlock[];
+  author?: string;
+  tags?: string[];
+  heroImage?: string;
 }
 
 export interface NewsContent {
@@ -20,6 +30,12 @@ export interface NewsContent {
     all: string;
     categories: string[];
     emptyState: string;
+  };
+  detail: {
+    backToNews: string;
+    articleNotFound: string;
+    relatedArticles: string;
+    shareArticle: string;
   };
   newsletter: {
     headline: string;

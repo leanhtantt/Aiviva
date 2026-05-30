@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Solution from './pages/Solution';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import Demo from './pages/Demo';
 import Contact from './pages/Contact';
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="solution" element={<Solution />} />
           <Route path="news" element={<News />} />
+          <Route path="news/:slug" element={<NewsDetail />} />
           <Route path="demo" element={<Demo />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<div className="container mx-auto py-20 text-center"><h1 className="text-2xl font-bold text-ink">Page Not Found</h1><p className="text-slate mt-2">Error 404.</p></div>} />
