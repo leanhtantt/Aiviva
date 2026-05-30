@@ -40,48 +40,69 @@ export function NewsNewsletterSection({ headline, subheadline, placeholder, butt
   };
 
   return (
-    <Section className="py-24 relative z-10 w-full overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-ink pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent mix-blend-overlay"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-sky/20 to-transparent"></div>
-      </div>
+    <Section variant="canvas" className="text-center py-16 lg:py-24 border-none">
+      <div 
+        className="relative max-w-7xl mx-auto rounded-3xl overflow-hidden px-6 py-16 md:py-20 lg:px-16 text-white shadow-2xl transition-all duration-300 hover:shadow-[0_24px_60px_rgba(8,112,184,0.22)]"
+        style={{
+          background: "linear-gradient(120deg, var(--color-deep-val) 0%, var(--color-primary-val) 52%, var(--color-bright-val) 100%)"
+        }}
+      >
+        {/* Extremely faint modern design grid pattern */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.12]" 
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
+            `,
+            backgroundSize: '24px 24px',
+          }}
+        />
 
-      <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] relative z-10">
-        <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 lg:p-16 rounded-[3rem] shadow-2xl flex flex-col md:flex-row items-center gap-12">
-          
-          <div className="flex-1 text-center md:text-left">
-             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-sky flex items-center justify-center text-white mb-6 mx-auto md:mx-0 shadow-lg shadow-primary/20">
-               <Mail className="w-8 h-8" />
-             </div>
-             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{headline}</h2>
-             <p className="text-white/70 text-lg">{subheadline}</p>
+        {/* Ambient glow spots */}
+        <div className="absolute -top-[30%] -right-[20%] w-[60%] h-[120%] rounded-full bg-sky/20 blur-[120px] pointer-events-none mix-blend-screen" />
+        <div className="absolute -bottom-[30%] -left-[20%] w-[60%] h-[120%] rounded-full bg-bright/20 blur-[120px] pointer-events-none mix-blend-screen" />
+
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6 backdrop-blur-md border border-white/20">
+            <Mail className="w-8 h-8" />
           </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-5xl font-bold mb-6 leading-tight select-none">
+            {headline}
+          </h2>
+          <p className="text-mist text-base sm:text-lg mb-10 text-opacity-95 leading-relaxed max-w-xl">
+            {subheadline}
+          </p>
 
-          <div className="w-full md:w-[400px]">
+          <div className="w-full max-w-md mx-auto">
              {isSubscribed ? (
                 <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white/10 border border-white/20 rounded-2xl p-6 flex flex-col items-center text-center gap-3"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col items-center text-center gap-3"
                 >
-                  <CheckCircle2 className="w-12 h-12 text-teal-400" />
+                  <CheckCircle2 className="w-12 h-12 text-white" />
                   <p className="text-white font-medium">{successMessage}</p>
                 </motion.div>
              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <div className="relative">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
+                  <div className="relative flex-1">
                      <input 
                         type="email" 
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder={placeholder}
-                        className="w-full bg-white/10 border border-white/20 text-white placeholder:text-white/40 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        className="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/60 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all h-[56px]"
                      />
                   </div>
-                  <Button variant="primary" size="lg" type="submit" className="w-full font-bold shadow-lg shadow-primary/30 hover:-translate-y-0.5">
-                    {buttonText}
+                  <Button 
+                    size="lg" 
+                    type="submit" 
+                    className="relative overflow-hidden w-full sm:w-auto px-8 shadow-lg !bg-white !text-primary font-bold !rounded-full cursor-pointer opacity-100 transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] hover:shadow-xl h-[56px] flex items-center justify-center"
+                  >
+                    <span className="absolute inset-0 block bg-gradient-to-r from-transparent via-sky-200/40 to-transparent animate-shimmer pointer-events-none" />
+                    <span className="relative z-10">{buttonText}</span>
                   </Button>
                 </form>
              )}
