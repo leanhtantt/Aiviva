@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Activity, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLang } from '@/lib/i18n';
 import { useScrollState, useBodyScrollLock } from '@/lib/hooks';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function SiteHeader() {
   const lang = useLang();
@@ -73,7 +74,7 @@ export function SiteHeader() {
           </nav>
           
           {/* Right - CTA & Mobile Menu */}
-          <div className="flex-shrink-0 flex items-center justify-end gap-4">
+          <div className="flex-shrink-0 flex items-center justify-end gap-3 sm:gap-4">
             <Link
               to={`/${lang}/demo`}
               className="hidden sm:inline-flex relative overflow-hidden bg-surface text-primary px-6 py-2.5 text-sm font-bold uppercase tracking-widest rounded-full transition-transform hover:scale-105 shadow-lg group"
@@ -86,6 +87,8 @@ export function SiteHeader() {
                 transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", repeatDelay: 1.5 }}
               />
             </Link>
+
+            <LanguageSwitcher />
 
             <button 
               className="md:hidden p-2 -mr-2 text-surface hover:bg-surface/20 rounded-full transition-colors"

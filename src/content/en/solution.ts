@@ -11,7 +11,7 @@ export const solutionContent = {
         desc: 'Any smartphone, tablet, or laptop'
       },
       {
-        title: 'rPPG + AI processing',
+        title: 'AI processing',
         desc: 'Noise elimination, >98% clinical-grade accuracy'
       },
       {

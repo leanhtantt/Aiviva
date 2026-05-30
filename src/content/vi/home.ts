@@ -66,10 +66,10 @@ export const homeContentVi = {
     ]
   },
   trust: {
-    headline: "Được kiểm chứng tại Mỹ và Việt Nam",
-    subheadline: "Nền tảng công nghệ từ đối tác Hoa Kỳ, bản địa hóa 100% cho thị trường Việt",
+    headline: "Được kiểm chứng",
+    subheadline: "Nền tảng công nghệ được kiểm chứng, bản địa hóa 100% cho thị trường Việt",
     signals: [
-      "Nền tảng đã validate tại thị trường Mỹ",
+      "Nền tảng đã được kiểm chứng",
       "Độ chính xác >98%",
       "Tuân thủ GDPR",
       "Tuân thủ Luật ANMVN"

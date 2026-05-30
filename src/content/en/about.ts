@@ -60,14 +60,14 @@ export const aboutContent = {
       {
         name: 'Nguyen Van Mui',
         role: 'CTO',
-        description: 'Technology architecture, eBeauti platform integration, AI/rPPG development for SEA market.',
+        description: 'Technology architecture, platform integration, AI development for SEA market.',
         image: '/assets/team/mui-nguyen.jpg',
       },
     ]
   },
   partner: {
     headline: 'eBeauti: US strategic technology partner',
-    subheadline: 'Core rPPG AI engine clinically validated in the US market, localized and deployed across Vietnam by AIVIVA.',
+    subheadline: 'Core rPPG AI engine clinically validated, localized and deployed across Vietnam by AIVIVA.',
     bullets: [
       'Core rPPG AI engine (clinically validated)',
       'Telehealth platform infrastructure',

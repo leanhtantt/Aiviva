@@ -17,7 +17,7 @@ export const aboutContent = {
       items: [
         { label: 'Tiếp cận', desc: 'Sức khỏe cho tất cả, không phân biệt thu nhập' },
         { label: 'Riêng tư', desc: 'Dữ liệu không bao giờ rời thiết bị (Edge AI)' },
-        { label: 'Chính xác', desc: 'Công nghệ rPPG đã được kiểm chứng lâm sàng (>98%)' },
+        { label: 'Chính xác', desc: 'Công nghệ đã được kiểm chứng lâm sàng (>98%)' },
         { label: 'Đơn giản', desc: '30 giây, chỉ cần camera điện thoại' },
       ],
     },
@@ -60,14 +60,14 @@ export const aboutContent = {
       {
         name: 'Nguyen Van Mui',
         role: 'CTO',
-        description: 'Kiến trúc công nghệ, tích hợp nền tảng eBeauti, phát triển AI/rPPG cho thị trường Đông Nam Á.',
+        description: 'Kiến trúc công nghệ, tích hợp nền tảng, phát triển AI cho thị trường Đông Nam Á.',
         image: '/assets/team/mui-nguyen.jpg',
       },
     ]
   },
   partner: {
     headline: 'eBeauti: Đối tác công nghệ chiến lược từ Hoa Kỳ',
-    subheadline: 'Nền tảng rPPG AI cốt lõi đã được kiểm chứng lâm sàng tại thị trường Mỹ, được AIVIVA bản địa hóa và triển khai tại Việt Nam.',
+    subheadline: 'Nền tảng rPPG AI cốt lõi đã được kiểm chứng lâm sàng, được AIVIVA bản địa hóa và triển khai tại Việt Nam.',
     bullets: [
       'Bộ xử lý AI rPPG cốt lõi (đã kiểm chứng lâm sàng)',
       'Cơ sở hạ tầng nền tảng khám chữa bệnh từ xa',

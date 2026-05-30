@@ -8,7 +8,6 @@ import { aboutContent as viContent } from '../content/vi/about';
 import { AboutHero } from '../components/sections/about/AboutHero';
 import { MissionVisionSection } from '../components/sections/about/MissionVisionSection';
 import { FoundingTeamSection } from '../components/sections/about/FoundingTeamSection';
-import { TechnologyPartnerSection } from '../components/sections/about/TechnologyPartnerSection';
 
 export default function About() {
   const lang = useLang();
@@ -19,7 +18,6 @@ export default function About() {
       <AboutHero content={content.hero} />
       <MissionVisionSection content={content.missionVision} />
       <FoundingTeamSection content={content.team} />
-      <TechnologyPartnerSection content={content.partner} />
     </div>
   );
 }

@@ -66,10 +66,10 @@ export const homeContentEn = {
     ]
   },
   trust: {
-    headline: "Validated in the US and Vietnam",
-    subheadline: "US-grade technology platform, 100% localized for Southeast Asia",
+    headline: "Validated",
+    subheadline: "Validated technology platform, 100% localized for Southeast Asia",
     signals: [
-      "Platform clinically validated in US market",
+      "Platform clinically validated",
       ">98% accuracy",
       "GDPR compliant",
       "VN Cybersecurity Act"

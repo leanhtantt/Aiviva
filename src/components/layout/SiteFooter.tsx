@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Phone, Mail, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { useLang } from '@/lib/i18n';
 
 const footerTranslations = {
@@ -17,7 +16,7 @@ const footerTranslations = {
     },
     brand: {
       tagline: "Pioneering Medical AI Technology for a healthier tomorrow.",
-      desc: "AIVIVA enables smartphone-based vital sign screening through rPPG, Edge AI, and privacy-first design."
+      desc: "AIVIVA enables smartphone-based vital sign screening through toughness and Face ID, Edge AI, and privacy-first design."
     },
     headings: {
       company: "Company",
@@ -34,7 +33,6 @@ const footerTranslations = {
     ],
     platformItems: [
       "Smartphone Vital Scan",
-      "rPPG Technology",
       "Edge AI Processing",
       "Privacy-first Health Data",
       "Partner Integration"
@@ -71,7 +69,7 @@ const footerTranslations = {
     },
     brand: {
       tagline: "Công nghệ AI y tế tiên phong cho một ngày mai khỏe mạnh hơn.",
-      desc: "AIVIVA hỗ trợ sàng lọc chỉ số sinh hiệu bằng điện thoại thông qua rPPG, Edge AI và thiết kế ưu tiên quyền riêng tư."
+      desc: "AIVIVA hỗ trợ sàng lọc chỉ số sinh hiệu bằng điện thoại thông qua toughness và Face ID, Edge AI và thiết kế ưu tiên quyền riêng tư."
     },
     headings: {
       company: "Công ty",
@@ -88,7 +86,6 @@ const footerTranslations = {
     ],
     platformItems: [
       "Quét sinh hiệu bằng điện thoại",
-      "Công nghệ rPPG",
       "Xử lý Edge AI",
       "Dữ liệu sức khỏe ưu tiên riêng tư",
       "Tích hợp đối tác"
@@ -241,9 +238,6 @@ export function SiteFooter() {
             <p className="text-sky-100/55 text-xs sm:text-sm leading-relaxed mb-6">
               {t.brand.desc}
             </p>
-            <div className="mt-2" id="footer-lang-switcher-wrapper">
-              <LanguageSwitcher />
-            </div>
           </div>
 
           {/* Column B (Company Links) */}

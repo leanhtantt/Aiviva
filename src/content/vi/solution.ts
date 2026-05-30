@@ -2,16 +2,16 @@ export const solutionContent = {
   overview: {
     headline: 'AIVIVA: Chụp ảnh selfie. Hiểu sức khỏe.',
     subheadline: 'Chụp ảnh selfie 30 giây để nhận đầy đủ chỉ số sinh hiệu mà không cần thiết bị vật lý',
-    coreTechTitle: 'Công nghệ cốt lõi: rPPG (Remote Photoplethysmography) KHÔNG XÂM LẤN - KHÔNG CHẠM',
+    coreTechTitle: 'Công nghệ cốt lõi: KHÔNG XÂM LẤN - KHÔNG CHẠM',
     coreTechDesc: 'Camera ghi lại vi biến màu sắc trong lưu lượng máu trên khuôn mặt → AI phân tích → trả kết quả.',
-    processTitle: 'Qy trình 4 bước:',
+    processTitle: 'Quy trình 4 bước:',
     processSteps: [
       {
         title: 'Đầu vào camera',
         desc: 'Bất kỳ smartphone, tablet, laptop'
       },
       {
-        title: 'Xử lý AI rPPG',
+        title: 'Xử lý AI',
         desc: 'Loại bỏ nhiễu, độ chính xác >98%'
       },
       {
@@ -23,7 +23,7 @@ export const solutionContent = {
         desc: 'Nhịp tim, HRV, SpO₂, huyết áp, chỉ số căng thẳng trong 30 giây'
       }
     ],
-    platformInfo: 'Nền tảng: Mobile App + Web, giao diện 100% tiếng Việt\nPowered by eBeauti (US) + AIVIVA localization',
+    platformInfo: 'Nền tảng: Mobile App + Web, giao diện 100% tiếng Việt\nPowered by eBeauti + AIVIVA localization',
     cta: 'Coming soon'
   },
   roadmap: {

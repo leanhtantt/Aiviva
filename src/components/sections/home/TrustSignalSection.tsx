@@ -27,20 +27,6 @@ export function TrustSignalSection({ content }: { content: any }) {
                </div>
              ))}
           </div>
-
-          <div className="mt-10 w-full md:w-[400px] bg-[#3985f4]/80 backdrop-blur-lg rounded-2xl p-8 border border-white/30 shadow-[0_8px_32px_rgba(0,100,250,0.2)] text-center flex flex-col items-center justify-center relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-300/10 to-transparent pointer-events-none" />
-              <div className="relative text-sm text-blue-50 mb-6 uppercase tracking-widest font-semibold flex items-center gap-2">
-                Technology Partner
-              </div>
-              <div className="relative flex items-center gap-3 mb-4 opacity-95 transition-transform cursor-pointer hover:scale-105 duration-300">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/40 shrink-0 flex items-center justify-center text-white font-bold rounded-xl shadow-lg">
-                   eB
-                </div>
-                <span className="text-3xl font-bold tracking-tight text-white drop-shadow-md">eBeauti</span>
-              </div>
-              <p className="relative text-sm text-blue-100 mt-4 border-t border-white/20 pt-4 w-full">Silicon Valley, CA, USA</p>
-          </div>
         </div>
 
       </div>
