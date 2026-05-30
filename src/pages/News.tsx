@@ -1,16 +1,34 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { newsContentEn } from '../content/en/news';
+import { newsContentVi } from '../content/vi/news';
+import { NewsHeroSection } from '../components/sections/news/NewsHeroSection';
+import { NewsGrid } from '../components/sections/news/NewsGrid';
+import { NewsNewsletterSection } from '../components/sections/news/NewsNewsletterSection';
 
 export default function News() {
   const { lang = 'en' } = useParams<{ lang: string }>();
+  const content = lang === 'vi' ? newsContentVi : newsContentEn;
+
   return (
-    <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] pt-32 pb-16 sm:pt-36 lg:pt-40 lg:pb-24 relative z-10 w-full">
-        <h1 className="text-3xl font-bold text-ink mb-4">{lang === 'en' ? 'Latest News' : 'Tin tức mới nhất'}</h1>
-        <p className="text-slate max-w-2xl text-lg">
-            {lang === 'en' 
-            ? 'Updates from our ecosystem.' 
-            : 'Cập nhật từ hệ sinh thái của chúng tôi.'}
-        </p>
+    <div className="flex flex-col min-h-screen">
+      <NewsHeroSection 
+        headline={content.hero.headline}
+        subheadline={content.hero.subheadline}
+      />
+      <NewsGrid 
+        articles={content.articles}
+        categories={content.filter.categories}
+        allLabel={content.filter.all}
+      />
+      <NewsNewsletterSection 
+        headline={content.newsletter.headline}
+        subheadline={content.newsletter.subheadline}
+        placeholder={content.newsletter.placeholder}
+        buttonText={content.newsletter.button}
+        successMessage={content.newsletter.success}
+      />
     </div>
   );
 }
+
