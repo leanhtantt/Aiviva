@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ChevronLeft, Calendar, Clock, Share2 } from 'lucide-react';
+import { ChevronLeft, Calendar, Clock, Share2, CheckCircle2 } from 'lucide-react';
 import { newsContentEn } from '../content/en/news';
 import { newsContentVi } from '../content/vi/news';
 import { Section } from '../components/ui/Section';
-import { Button } from '../components/ui/Button';
 import { NewsCard } from '../components/sections/news/NewsCard';
 import { NewsArticleBlock } from '../types/news';
 
@@ -36,13 +35,32 @@ export default function NewsDetail() {
   const { lang = 'en', slug } = useParams<{ lang: string; slug: string }>();
   const content = lang === 'vi' ? newsContentVi : newsContentEn;
   const [imgError, setImgError] = useState(false);
+  const [shareText, setShareText] = useState(content.detail.shareArticle);
 
   const article = content.articles.find(a => a.slug === slug);
 
   // Scroll to top on load or path change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+    setShareText(content.detail.shareArticle);
+  }, [slug, content.detail.shareArticle]);
+
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: article?.title || '',
+          url: window.location.href,
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        setShareText(content.detail.linkCopied);
+        setTimeout(() => setShareText(content.detail.shareArticle), 3000);
+      }
+    } catch (e) {
+      // User aborted or clipboard failed, ignore quietly
+    }
+  };
 
   if (!article) {
     return (
@@ -119,6 +137,9 @@ export default function NewsDetail() {
               <img 
                 src={heroImageSrc} 
                 alt={article.title}
+                width="1200"
+                height="630"
+                decoding="async"
                 className="w-full h-full object-cover"
                 onError={() => setImgError(true)}
               />
@@ -153,9 +174,16 @@ export default function NewsDetail() {
                    </span>
                  ))}
               </div>
-              <button className="flex items-center gap-2 text-slate hover:text-primary font-medium transition-colors group px-4 py-2 rounded-full hover:bg-primary/5">
-                <Share2 className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-                {content.detail.shareArticle}
+              <button 
+                onClick={handleShare}
+                className="flex items-center gap-2 text-slate hover:text-primary font-medium transition-colors group px-4 py-2 rounded-full hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                {shareText === content.detail.linkCopied ? (
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                ) : (
+                  <Share2 className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                )}
+                <span className={shareText === content.detail.linkCopied ? "text-green-600" : ""}>{shareText}</span>
               </button>
             </div>
           </div>

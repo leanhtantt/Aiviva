@@ -15,7 +15,8 @@ export const newsContentEn: NewsContent = {
     backToNews: 'Back to News',
     articleNotFound: 'Article not found',
     relatedArticles: 'Related Articles',
-    shareArticle: 'Share this article'
+    shareArticle: 'Share this article',
+    linkCopied: 'Link copied'
   },
   newsletter: {
     headline: 'Subscribe to our newsletter',
@@ -27,6 +28,7 @@ export const newsContentEn: NewsContent = {
   articles: [
     {
       id: 'en-1',
+      translationKey: 'platform-launch',
       slug: 'aiviva-launches-new-telehealth-platform',
       category: 'Product',
       title: 'AIVIVA Launches Next-Generation Telehealth Platform',
@@ -35,9 +37,9 @@ export const newsContentEn: NewsContent = {
       readTime: '5 min read',
       featured: true,
       content: [
-        { type: 'paragraph', text: 'We are thrilled to announce the launch of our next-generation telehealth platform, designed to revolutionize remote healthcare through advanced artificial intelligence.' },
+        { type: 'paragraph', text: 'We are thrilled to announce the launch of our next-generation telehealth platform, designed to enhance remote healthcare through advanced artificial intelligence.' },
         { type: 'heading', text: 'Seamless Vital Monitoring' },
-        { type: 'paragraph', text: 'Our new platform integrates cutting-edge AI scanning technology, allowing users to monitor their vital signs seamlessly using just their smartphone camera.' },
+        { type: 'paragraph', text: 'Our new platform incorporates advanced AI scanning technology, allowing users to monitor their vital signs seamlessly using just their smartphone camera.' },
         { type: 'list', items: [
           'Heart rate monitoring without wearables',
           'Oxygen saturation (SpO2) estimation',
@@ -49,6 +51,7 @@ export const newsContentEn: NewsContent = {
     },
     {
       id: 'en-2',
+      translationKey: 'partner-pharmacy',
       slug: 'partnership-with-major-pharmacy-chain',
       category: 'Partnership',
       title: 'AIVIVA Partners with Major National Pharmacy Chain',
@@ -69,6 +72,7 @@ export const newsContentEn: NewsContent = {
     },
     {
       id: 'en-3',
+      translationKey: 'telehealth-trends',
       slug: 'telehealth-trends-southeast-asia-2026',
       category: 'Market',
       title: 'Telehealth Trends in Southeast Asia for 2026',
@@ -85,6 +89,7 @@ export const newsContentEn: NewsContent = {
     },
     {
       id: 'en-4',
+      translationKey: 'hrv-intro',
       slug: 'understanding-hrv-and-stress',
       category: 'Health',
       title: 'Understanding Heart Rate Variability (HRV) and Stress',
@@ -105,22 +110,24 @@ export const newsContentEn: NewsContent = {
     },
     {
       id: 'en-5',
+      translationKey: 'research-update',
       slug: 'ai-vitals-scanning-accuracy-study',
       category: 'Product',
-      title: 'Clinical Accuracy Study: Smartphone Vitals Scanning',
-      excerpt: 'Recent peer-reviewed study validates the accuracy of our rPPG technology across diverse skin tones.',
+      title: 'Research Update: Smartphone Vitals Scanning',
+      excerpt: 'Recent early evaluation explores the alignment of our rPPG technology across diverse skin tones.',
       date: 'April 10, 2026',
       readTime: '8 min read',
       content: [
-        { type: 'paragraph', text: 'We are proud to share the results of a comprehensive clinical study evaluating the accuracy of our AI-powered visual vital sign scanning technology.' },
+        { type: 'paragraph', text: 'We are proud to share the results of a comprehensive early evaluation exploring the alignment of our AI-powered visual vital sign scanning technology.' },
         { type: 'heading', text: 'Key Findings' },
-        { type: 'paragraph', text: 'The study, which included a diverse participant pool, demonstrated that our rPPG (remote photoplethysmography) algorithms achieve high correlation with traditional medical-grade sensors.' },
-        { type: 'quote', text: 'Crucially, the study verified that the algorithms perform consistently across all Fitzpatrick skin types.' },
-        { type: 'paragraph', text: 'This validates our commitment to creating inclusive digital health technologies that serve everyone equally.' }
+        { type: 'paragraph', text: 'The study, which included a diverse participant pool, demonstrated that our rPPG (remote photoplethysmography) algorithms show promising alignment with traditional medical-grade sensors.' },
+        { type: 'quote', text: 'Crucially, the study noted that the algorithms were evaluated across diverse skin tones.' },
+        { type: 'paragraph', text: 'This supports our commitment to creating inclusive digital health technologies that serve everyone equally.' }
       ]
     },
     {
       id: 'en-6',
+      translationKey: 'insurance-integration',
       slug: 'expanding-health-insurance-partnerships',
       category: 'Partnership',
       title: 'Expanding Our Reach: New Health Insurance Integrations',

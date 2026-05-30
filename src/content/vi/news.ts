@@ -15,7 +15,8 @@ export const newsContentVi: NewsContent = {
     backToNews: 'Quay lại Tin tức',
     articleNotFound: 'Không tìm thấy bài viết',
     relatedArticles: 'Bài viết liên quan',
-    shareArticle: 'Chia sẻ bài viết này'
+    shareArticle: 'Chia sẻ bài viết này',
+    linkCopied: 'Đã sao chép liên kết'
   },
   newsletter: {
     headline: 'Đăng ký nhận bản tin',
@@ -27,6 +28,7 @@ export const newsContentVi: NewsContent = {
   articles: [
     {
       id: 'vi-1',
+      translationKey: 'platform-launch',
       slug: 'aiviva-ra-mat-nen-tang-telehealth-moi',
       category: 'Sản phẩm',
       title: 'AIVIVA Ra Mắt Nền Tảng Telehealth Thế Hệ Mới',
@@ -35,9 +37,9 @@ export const newsContentVi: NewsContent = {
       readTime: '5 phút đọc',
       featured: true,
       content: [
-        { type: 'paragraph', text: 'Chúng tôi rất vui mừng thông báo ra mắt nền tảng y tế từ xa thế hệ mới, được thiết kế để cách mạng hóa chăm sóc sức khỏe thông qua trí tuệ nhân tạo.' },
+        { type: 'paragraph', text: 'Chúng tôi rất vui mừng thông báo ra mắt nền tảng y tế từ xa thế hệ mới, được thiết kế để cải thiện chăm sóc sức khỏe thông qua trí tuệ nhân tạo.' },
         { type: 'heading', text: 'Đo Chỉ Số Sinh Tồn Mượt Mà' },
-        { type: 'paragraph', text: 'Nền tảng mới của chúng tôi tích hợp công nghệ quét AI tiên tiến, cho phép người dùng theo dõi các chỉ số sinh tồn trực tiếp bằng camera điện thoại thông minh.' },
+        { type: 'paragraph', text: 'Nền tảng mới của chúng tôi kết hợp công nghệ quét AI tiên tiến, cho phép người dùng theo dõi các chỉ số sinh tồn trực tiếp bằng camera điện thoại thông minh.' },
         { type: 'list', items: [
           'Đo nhịp tim không cần thiết bị đeo',
           'Ước tính độ bão hòa oxy trong máu (SpO2)',
@@ -49,6 +51,7 @@ export const newsContentVi: NewsContent = {
     },
     {
       id: 'vi-2',
+      translationKey: 'partner-pharmacy',
       slug: 'hop-tac-chuoi-nha-thuoc-lon',
       category: 'Đối tác',
       title: 'AIVIVA Hợp Tác Cùng Chuỗi Nhà Thuốc Hàng Đầu',
@@ -69,6 +72,7 @@ export const newsContentVi: NewsContent = {
     },
     {
       id: 'vi-3',
+      translationKey: 'telehealth-trends',
       slug: 'xu-huong-telehealth-dong-nam-a-2026',
       category: 'Thị trường',
       title: 'Xu Hướng Telehealth Tại Đông Nam Á Năm 2026',
@@ -85,6 +89,7 @@ export const newsContentVi: NewsContent = {
     },
     {
       id: 'vi-4',
+      translationKey: 'hrv-intro',
       slug: 'hieu-ve-hrv-va-cang-thang',
       category: 'Sức khỏe',
       title: 'Hiểu Về Biến Thiên Nhịp Tim (HRV) Và Mức Căng Thẳng',
@@ -105,22 +110,24 @@ export const newsContentVi: NewsContent = {
     },
     {
       id: 'vi-5',
+      translationKey: 'research-update',
       slug: 'nghien-cuu-do-chinh-xac-quet-sinh-ton-ai',
       category: 'Sản phẩm',
-      title: 'Nghiên Cứu Lâm Sàng: Độ Chính Xác Khi Quét Sinh Tồn',
-      excerpt: 'Nghiên cứu mới nhất xác nhận độ chính xác cao của công nghệ rPPG trên nhiều tông màu da khác nhau.',
+      title: 'Cập Nhật Nghiên Cứu: Quét Sinh Tồn Bằng Smartphone',
+      excerpt: 'Đánh giá ban đầu mới nhất khám phá sự phù hợp của công nghệ rPPG trên nhiều tông màu da khác nhau.',
       date: '10 Thg 4, 2026',
       readTime: '8 phút đọc',
       content: [
-        { type: 'paragraph', text: 'Chúng tôi tự hào chia sẻ kết quả của một nghiên cứu lâm sàng toàn diện đánh giá độ chính xác của công nghệ quét chỉ số sinh tồn bằng hình ảnh thông qua AI.' },
+        { type: 'paragraph', text: 'Chúng tôi tự hào chia sẻ kết quả của một đánh giá ban đầu toàn diện khám phá sự phù hợp của công nghệ quét chỉ số sinh tồn bằng hình ảnh thông qua AI.' },
         { type: 'heading', text: 'Các Kết Quả Chính' },
-        { type: 'paragraph', text: 'Nghiên cứu với nhiều nhóm người tham gia đa dạng đã chứng minh thuật toán rPPG của chúng tôi đạt độ tương quan cao với các cảm biến y tế truyền thống.' },
-        { type: 'quote', text: 'Đặc biệt quan trọng, nghiên cứu đã xác minh rằng thuật toán hoạt động nhất quán trên tất cả các loại da theo thang đo Fitzpatrick.' },
-        { type: 'paragraph', text: 'Điều này khẳng định cam kết của chúng tôi trong việc tạo ra công nghệ y tế số bao trùm, phục vụ mọi người một cách bình đẳng.' }
+        { type: 'paragraph', text: 'Đánh giá với nhiều nhóm người tham gia đa dạng cho thấy thuật toán rPPG của chúng tôi có sự điều chỉnh đầy hứa hẹn so với các cảm biến y tế truyền thống.' },
+        { type: 'quote', text: 'Và quan trọng là, đánh giá ghi nhận rằng thuật toán đã được thử nghiệm trên nhiều tông màu da đa dạng.' },
+        { type: 'paragraph', text: 'Điều này ủng hộ cam kết của chúng tôi trong việc tạo ra công nghệ y tế số bao trùm, phục vụ mọi người một cách bình đẳng.' }
       ]
     },
     {
       id: 'vi-6',
+      translationKey: 'insurance-integration',
       slug: 'mo-rong-hop-tac-bao-hiem-y-te',
       category: 'Đối tác',
       title: 'Mở Rộng Mạng Lưới: Tích Hợp Bảo Hiểm Y Tế',

@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { useLang } from '@/lib/i18n';
+import { newsContentEn } from '../../content/en/news';
+import { newsContentVi } from '../../content/vi/news';
 
 export function LanguageSwitcher() {
   const { pathname } = useLocation();
@@ -11,6 +13,32 @@ export function LanguageSwitcher() {
   const toggleLang = () => {
     const nextLang = lang === 'en' ? 'vi' : 'en';
     const pathParts = pathname.split('/');
+    
+    // Check if we are on /:lang/news/:slug
+    if ((pathParts[1] === 'en' || pathParts[1] === 'vi') && pathParts[2] === 'news' && pathParts[3]) {
+      const currentSlug = pathParts[3];
+      
+      const currentContent = lang === 'en' ? newsContentEn : newsContentVi;
+      const nextContent = nextLang === 'en' ? newsContentEn : newsContentVi;
+      
+      const currentArticle = currentContent.articles.find(a => a.slug === currentSlug);
+      if (currentArticle) {
+        const nextArticle = nextContent.articles.find(a => a.translationKey === currentArticle.translationKey);
+        if (nextArticle) {
+          pathParts[1] = nextLang;
+          pathParts[3] = nextArticle.slug;
+          navigate(pathParts.join('/'));
+          return;
+        }
+      }
+      
+      // Fallback
+      pathParts[1] = nextLang;
+      pathParts.length = 3;
+      navigate(pathParts.join('/'));
+      return;
+    }
+
     if (pathParts[1] === 'en' || pathParts[1] === 'vi') {
       pathParts[1] = nextLang;
       navigate(pathParts.join('/'));

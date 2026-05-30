@@ -6,6 +6,7 @@ export type NewsArticleBlock =
 
 export interface NewsArticle {
   id: string;
+  translationKey: string;
   slug: string;
   category: string;
   title: string;
@@ -36,6 +37,7 @@ export interface NewsContent {
     articleNotFound: string;
     relatedArticles: string;
     shareArticle: string;
+    linkCopied: string;
   };
   newsletter: {
     headline: string;
