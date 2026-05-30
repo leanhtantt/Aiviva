@@ -51,7 +51,7 @@ export function LanguageSwitcher() {
     <button
       onClick={toggleLang}
       className="relative flex items-center h-10 w-[200px] bg-mist rounded-full cursor-pointer border border-pale hover:border-sky transition-colors focus:outline-none focus:ring-2 focus:ring-sky shadow-inner"
-      aria-label="Toggle language"
+      aria-label={lang === 'en' ? 'Chuyển sang tiếng Việt' : 'Switch to English'}
     >
       {/* Background texts */}
       <span className="absolute left-[24px] text-xs font-bold text-slate z-0 select-none">English</span>

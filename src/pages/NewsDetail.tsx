@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ChevronLeft, Calendar, Clock, Share2, CheckCircle2 } from 'lucide-react';
@@ -36,13 +36,18 @@ export default function NewsDetail() {
   const content = lang === 'vi' ? newsContentVi : newsContentEn;
   const [imgError, setImgError] = useState(false);
   const [shareText, setShareText] = useState(content.detail.shareArticle);
+  const shareTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const article = content.articles.find(a => a.slug === slug);
 
-  // Scroll to top on load or path change
+  // Reset share text on path or language change
   useEffect(() => {
-    window.scrollTo(0, 0);
     setShareText(content.detail.shareArticle);
+    return () => {
+      if (shareTimeoutRef.current) {
+        clearTimeout(shareTimeoutRef.current);
+      }
+    };
   }, [slug, content.detail.shareArticle]);
 
   const handleShare = async () => {
@@ -55,7 +60,13 @@ export default function NewsDetail() {
       } else {
         await navigator.clipboard.writeText(window.location.href);
         setShareText(content.detail.linkCopied);
-        setTimeout(() => setShareText(content.detail.shareArticle), 3000);
+        
+        if (shareTimeoutRef.current) {
+          clearTimeout(shareTimeoutRef.current);
+        }
+        shareTimeoutRef.current = setTimeout(() => {
+          setShareText(content.detail.shareArticle);
+        }, 3000);
       }
     } catch (e) {
       // User aborted or clipboard failed, ignore quietly

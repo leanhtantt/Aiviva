@@ -120,7 +120,7 @@ export const newsContentVi: NewsContent = {
       content: [
         { type: 'paragraph', text: 'Chúng tôi tự hào chia sẻ kết quả của một đánh giá ban đầu toàn diện khám phá sự phù hợp của công nghệ quét chỉ số sinh tồn bằng hình ảnh thông qua AI.' },
         { type: 'heading', text: 'Các Kết Quả Chính' },
-        { type: 'paragraph', text: 'Đánh giá với nhiều nhóm người tham gia đa dạng cho thấy thuật toán rPPG của chúng tôi có sự điều chỉnh đầy hứa hẹn so với các cảm biến y tế truyền thống.' },
+        { type: 'paragraph', text: 'Đánh giá với nhiều nhóm người tham gia đa dạng cho thấy thuật toán rPPG của chúng tôi có sự điều chỉnh đầy hứa hẹn so với các thiết bị tham chiếu.' },
         { type: 'quote', text: 'Và quan trọng là, đánh giá ghi nhận rằng thuật toán đã được thử nghiệm trên nhiều tông màu da đa dạng.' },
         { type: 'paragraph', text: 'Điều này ủng hộ cam kết của chúng tôi trong việc tạo ra công nghệ y tế số bao trùm, phục vụ mọi người một cách bình đẳng.' }
       ]
