@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { Section } from '../../ui/Section';
 import { Button } from '../../ui/Button';
 import { Mail, CheckCircle2 } from 'lucide-react';
+import { useLang } from '../../../lib/i18n';
+import { submitGoogleForm } from '../../../lib/googleForms';
 
 interface NewsNewsletterSectionProps {
   headline: string;
@@ -13,8 +15,10 @@ interface NewsNewsletterSectionProps {
 }
 
 export function NewsNewsletterSection({ headline, subheadline, placeholder, buttonText, successMessage }: NewsNewsletterSectionProps) {
+  const lang = useLang();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -25,17 +29,39 @@ export function NewsNewsletterSection({ headline, subheadline, placeholder, butt
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setEmail('');
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+    if (email && !isSubmitting) {
+      setIsSubmitting(true);
+      try {
+        const formId = import.meta.env.VITE_GOOGLE_SUBSCRIBE_FORM_ID;
+        const entries: Record<string, string> = {};
+        
+        const emailKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_EMAIL;
+        if (emailKey) entries[emailKey] = email;
+        
+        const langKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_LANG;
+        if (langKey) entries[langKey] = lang;
+        
+        const sourceKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_SOURCE;
+        if (sourceKey) entries[sourceKey] = 'news';
+
+        await submitGoogleForm(formId || '', entries);
+        
+        setIsSubscribed(true);
+        setEmail('');
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+          setIsSubscribed(false);
+        }, 5000);
+      } catch (error) {
+        // Silently fail or keep email
+        console.error("Subscription failed:", error);
+      } finally {
+        setIsSubmitting(false);
       }
-      timeoutRef.current = setTimeout(() => {
-        setIsSubscribed(false);
-      }, 5000); // Reset after 5 seconds just for demo
     }
   };
 
@@ -99,7 +125,8 @@ export function NewsNewsletterSection({ headline, subheadline, placeholder, butt
                   <Button 
                     size="lg" 
                     type="submit" 
-                    className="relative overflow-hidden w-full sm:w-auto px-8 shadow-lg !bg-white !text-primary font-bold !rounded-full cursor-pointer opacity-100 transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] hover:shadow-xl h-[56px] flex items-center justify-center"
+                    disabled={isSubmitting}
+                    className="relative overflow-hidden w-full sm:w-auto px-8 shadow-lg !bg-white !text-primary font-bold !rounded-full cursor-pointer opacity-100 transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] hover:shadow-xl h-[56px] flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <span className="absolute inset-0 block bg-gradient-to-r from-transparent via-sky-200/40 to-transparent animate-shimmer pointer-events-none" />
                     <span className="relative z-10">{buttonText}</span>

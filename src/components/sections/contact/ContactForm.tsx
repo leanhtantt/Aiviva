@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../../ui/Button';
 import { CheckCircle2, AlertCircle } from 'lucide-react';
+import { useLang } from '../../../lib/i18n';
+import { submitGoogleForm } from '../../../lib/googleForms';
 
 export function ContactForm({ content }: { content: any }) {
+  const lang = useLang();
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
@@ -27,18 +30,47 @@ export function ContactForm({ content }: { content: any }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     
     setStatus('submitting');
-    // Mock submit
-    setTimeout(() => {
+    
+    try {
+      const formId = import.meta.env.VITE_GOOGLE_CONTACT_FORM_ID;
+      
+      const entries: Record<string, string> = {};
+      
+      const nameKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_NAME;
+      if (nameKey) entries[nameKey] = formData.name;
+      
+      const emailKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_EMAIL;
+      if (emailKey) entries[emailKey] = formData.email;
+      
+      const phoneKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_PHONE;
+      if (phoneKey) entries[phoneKey] = formData.phone;
+      
+      const typeKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_TYPE;
+      if (typeKey) entries[typeKey] = formData.type;
+      
+      const messageKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_MESSAGE;
+      if (messageKey) entries[messageKey] = formData.message;
+      
+      const langKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_LANG;
+      if (langKey) entries[langKey] = lang;
+      
+      const pageKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_PAGE;
+      if (pageKey) entries[pageKey] = window.location.href;
+
+      await submitGoogleForm(formId || '', entries);
+      
       setStatus('success');
       setFormData({
         name: '', email: '', phone: '', type: content.typeOptions[0].value, message: ''
       });
-    }, 1500);
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
