@@ -57,7 +57,7 @@ function MetricCard({ metric, index }: { metric: any, index: number }) {
 
 export function SampleResultsDashboard({ content }: { content: any }) {
   return (
-    <Section variant="surface" className="py-20 lg:py-32">
+    <Section id="sample-results" variant="surface" className="py-20 lg:py-32">
       <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)]">
         
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">

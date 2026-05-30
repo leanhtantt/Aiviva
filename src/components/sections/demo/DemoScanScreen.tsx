@@ -1,16 +1,18 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ScanLine, UserSquare2, ShieldCheck, Activity } from 'lucide-react';
+import { CameraMockContent } from './DemoPhoneSimulator';
 
 export type ScanState = 'idle' | 'aligning' | 'scanning' | 'analyzing' | 'complete';
 
 interface DemoScanScreenProps {
   scanState: ScanState;
+  content: CameraMockContent;
 }
 
-export function DemoScanScreen({ scanState }: DemoScanScreenProps) {
+export function DemoScanScreen({ scanState, content }: DemoScanScreenProps) {
   return (
-    <div className="relative w-[300px] sm:w-[320px] aspect-[9/19.5] bg-ink rounded-[2.5rem] p-2 sm:p-3 pb-6 sm:pb-8 shadow-2xl border-4 sm:border-8 border-slate overflow-hidden mx-auto">
+    <div className="relative w-[260px] sm:w-[320px] aspect-[9/19.5] bg-ink rounded-[2.5rem] p-2 sm:p-3 pb-6 sm:pb-8 shadow-2xl border-4 sm:border-8 border-slate overflow-hidden mx-auto">
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-5 sm:h-6 bg-slate rounded-b-2xl z-20"></div>
 
@@ -22,8 +24,8 @@ export function DemoScanScreen({ scanState }: DemoScanScreenProps) {
                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
                  <ScanLine className="w-8 h-8 text-sky" />
                </div>
-               <h3 className="text-white font-semibold text-lg mb-2">Camera Ready</h3>
-               <p className="text-sky/60 text-sm">Tap Start to begin the scan simulation</p>
+               <h3 className="text-white font-semibold text-lg mb-2">{content.screenIdleTitle}</h3>
+               <p className="text-sky/60 text-sm">{content.screenIdleDesc}</p>
              </div>
           )}
 
@@ -89,8 +91,8 @@ export function DemoScanScreen({ scanState }: DemoScanScreenProps) {
                 >
                   <ShieldCheck className="w-10 h-10 text-success" />
                 </motion.div>
-                <h3 className="text-white font-bold text-xl mb-2">Scan Finished</h3>
-                <p className="text-success/70 text-sm">Vitals captured successfully</p>
+                <h3 className="text-white font-bold text-xl mb-2">{content.screenCompleteTitle}</h3>
+                <p className="text-success/70 text-sm">{content.screenCompleteDesc}</p>
              </div>
           )}
 

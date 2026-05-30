@@ -8,7 +8,25 @@ export const demoContent = {
       detecting: 'Detecting face...',
       analyzing: 'Analyzing vitals...',
       success: 'Scan Complete',
-      disclaimer: 'For demonstration purposes only. Not a medical device.'
+      disclaimer: 'For demonstration purposes only. Not a medical device.',
+      idleTitle: 'Ready for scanning',
+      idleDesc: 'Click Start to begin the 30-second simulation.',
+      aligningTitle: 'Aligning face...',
+      aligningDesc: 'Hold your device steady and wait for the alignment frame to lock.',
+      scanningTitle: 'Scanning vitals...',
+      scanningDesc: 'Capturing micro-variations in skin color through the camera.',
+      analyzingTitle: 'Analyzing data...',
+      analyzingDesc: 'Processing captured frames securely via AI models.',
+      completeTitle: 'Scan Complete',
+      completeDesc: 'All necessary vitals data has been successfully acquired and processed.',
+      progressLabel: 'Progress',
+      viewResultsBtn: 'View Results',
+      resetBtn: 'Reset',
+      cancelBtn: 'Cancel Demo',
+      screenIdleTitle: 'Camera Ready',
+      screenIdleDesc: 'Tap Start to begin the scan simulation',
+      screenCompleteTitle: 'Scan Finished',
+      screenCompleteDesc: 'Vitals captured successfully'
     }
   },
   howToUse: {

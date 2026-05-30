@@ -8,7 +8,25 @@ export const demoContent = {
       detecting: 'Đang nhận diện khuôn mặt...',
       analyzing: 'Đang phân tích sinh hiệu...',
       success: 'Quét hoàn tất',
-      disclaimer: 'Chỉ dành cho mục đích thử nghiệm. Không phải thiết bị y tế.'
+      disclaimer: 'Chỉ dành cho mục đích thử nghiệm. Không phải thiết bị y tế.',
+      idleTitle: 'Sẵn sàng quét',
+      idleDesc: 'Nhấn Bắt đầu để mô phỏng quét 30 giây.',
+      aligningTitle: 'Căn chỉnh khuôn mặt...',
+      aligningDesc: 'Giữ thiết bị ổn định và đợi khung nhận diện khóa vị trí.',
+      scanningTitle: 'Đang quét sinh hiệu...',
+      scanningDesc: 'Phân tích sự thay đổi siêu nhỏ của màu da qua camera.',
+      analyzingTitle: 'Đang phân tích dữ liệu...',
+      analyzingDesc: 'Đang xử lý chuẩn xác hình ảnh bằng mô hình AI.',
+      completeTitle: 'Quét hoàn tất',
+      completeDesc: 'Toàn bộ dữ liệu sinh hiệu đã được thu thập và phân tích thành công.',
+      progressLabel: 'Tiến trình',
+      viewResultsBtn: 'Xem kết quả',
+      resetBtn: 'Thử lại',
+      cancelBtn: 'Hủy dùng thử',
+      screenIdleTitle: 'Camera đã sẵn sàng',
+      screenIdleDesc: 'Nhấn Bắt đầu để mô phỏng quét',
+      screenCompleteTitle: 'Quét hoàn tất',
+      screenCompleteDesc: 'Thu thập sinh hiệu thành công'
     }
   },
   howToUse: {

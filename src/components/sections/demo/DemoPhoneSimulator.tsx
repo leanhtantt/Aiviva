@@ -2,7 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { DemoScanScreen, ScanState } from './DemoScanScreen';
 import { DemoScanStatusPanel } from './DemoScanStatusPanel';
 
-export function DemoPhoneSimulator({ content }: { content: any }) {
+export interface CameraMockContent {
+  buttonStart: string;
+  scanning: string;
+  detecting: string;
+  analyzing: string;
+  success: string;
+  disclaimer: string;
+  idleTitle: string;
+  idleDesc: string;
+  aligningTitle: string;
+  aligningDesc: string;
+  scanningTitle: string;
+  scanningDesc: string;
+  analyzingTitle: string;
+  analyzingDesc: string;
+  completeTitle: string;
+  completeDesc: string;
+  progressLabel: string;
+  viewResultsBtn: string;
+  resetBtn: string;
+  cancelBtn: string;
+  screenIdleTitle: string;
+  screenIdleDesc: string;
+  screenCompleteTitle: string;
+  screenCompleteDesc: string;
+}
+
+export function DemoPhoneSimulator({ content }: { content: CameraMockContent }) {
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [progress, setProgress] = useState(0);
 
@@ -16,14 +43,16 @@ export function DemoPhoneSimulator({ content }: { content: any }) {
     setProgress(0);
   };
 
+  const isRunning = scanState !== 'idle' && scanState !== 'complete';
+
   useEffect(() => {
-    if (scanState === 'idle' || scanState === 'complete') {
+    if (!isRunning) {
       return; 
     }
 
     // 15 seconds total timeline
     const totalDuration = 15000; 
-    const interval = 50; // update frequency
+    const interval = 100; // update frequency
     const totalSteps = totalDuration / interval;
     const progressPerStep = 100 / totalSteps;
 
@@ -51,12 +80,12 @@ export function DemoPhoneSimulator({ content }: { content: any }) {
     }, interval);
 
     return () => clearInterval(timer);
-  }, [scanState === 'idle', scanState === 'complete']);
+  }, [isRunning]);
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 max-w-6xl mx-auto w-full">
        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <DemoScanScreen scanState={scanState} />
+          <DemoScanScreen scanState={scanState} content={content} />
        </div>
        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
           <DemoScanStatusPanel 
