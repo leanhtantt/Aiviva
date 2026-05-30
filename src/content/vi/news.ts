@@ -2,12 +2,14 @@ import { NewsContent } from '../../types/news';
 
 export const newsContentVi: NewsContent = {
   hero: {
+    badge: 'Tin tức & Cập nhật',
     headline: 'Tin tức mới nhất từ AIVIVA',
     subheadline: 'Cập nhật về sản phẩm, đối tác, thị trường và công nghệ Telehealth AI.'
   },
   filter: {
     all: 'Tất cả',
-    categories: ['Sản phẩm', 'Đối tác', 'Thị trường', 'Sức khỏe']
+    categories: ['Sản phẩm', 'Đối tác', 'Thị trường', 'Sức khỏe'],
+    emptyState: 'Chưa có bài viết nào trong danh mục này.'
   },
   newsletter: {
     headline: 'Đăng ký nhận bản tin',

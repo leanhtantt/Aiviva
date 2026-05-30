@@ -12,12 +12,14 @@ export interface NewsArticle {
 
 export interface NewsContent {
   hero: {
+    badge: string;
     headline: string;
     subheadline: string;
   };
   filter: {
     all: string;
     categories: string[];
+    emptyState: string;
   };
   newsletter: {
     headline: string;

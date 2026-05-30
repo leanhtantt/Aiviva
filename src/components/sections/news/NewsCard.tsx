@@ -16,7 +16,7 @@ export function NewsCard({ article, featured, index }: NewsCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: featured ? 0 : index * 0.1 }}
-      className={`group flex flex-col bg-white rounded-3xl overflow-hidden border border-mist shadow-sm hover:shadow-xl transition-all duration-300 block 
+      className={`group flex flex-col bg-white rounded-3xl overflow-hidden border border-mist shadow-sm hover:shadow-md transition-shadow duration-300 block 
         ${featured ? 'lg:flex-row' : ''}
       `}
     >
@@ -29,12 +29,12 @@ export function NewsCard({ article, featured, index }: NewsCardProps) {
               height="600"
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
         ) : (
-           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-sky/20 flex flex-col items-center justify-center p-6 text-center text-primary/40 transition-transform duration-700 group-hover:scale-105">
+           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-sky/20 flex flex-col items-center justify-center p-6 text-center text-primary/40 transition-transform duration-700 group-hover:scale-[1.02]">
              <div className="w-16 h-16 rounded-full bg-white/50 backdrop-blur-sm mb-4 flex items-center justify-center shadow-sm">
-                <span className="text-xl font-bold">{article.category.charAt(0)}</span>
+                <span className="text-xl font-bold">{article.category?.charAt(0) || 'A'}</span>
              </div>
              <span className="font-medium">{article.category}</span>
            </div>

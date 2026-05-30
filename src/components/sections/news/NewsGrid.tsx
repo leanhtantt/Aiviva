@@ -9,9 +9,10 @@ interface NewsGridProps {
   articles: NewsArticle[];
   categories: string[];
   allLabel: string;
+  emptyState: string;
 }
 
-export function NewsGrid({ articles, categories, allLabel }: NewsGridProps) {
+export function NewsGrid({ articles, categories, allLabel, emptyState }: NewsGridProps) {
   const [activeCategory, setActiveCategory] = useState<string>(allLabel);
 
   const filteredArticles = activeCategory === allLabel 
@@ -69,7 +70,7 @@ export function NewsGrid({ articles, categories, allLabel }: NewsGridProps) {
                 </>
             ) : (
                 <div className="py-20 text-center">
-                    <p className="text-slate text-lg">No articles found in this category.</p>
+                    <p className="text-slate text-lg">{emptyState}</p>
                 </div>
             )}
           </motion.div>

@@ -2,12 +2,14 @@ import { NewsContent } from '../../types/news';
 
 export const newsContentEn: NewsContent = {
   hero: {
+    badge: 'News & Updates',
     headline: 'Latest news from AIVIVA',
     subheadline: 'Updates on product, partnerships, market trends and Telehealth AI technology.'
   },
   filter: {
     all: 'All',
-    categories: ['Product', 'Partnership', 'Market', 'Health']
+    categories: ['Product', 'Partnership', 'Market', 'Health'],
+    emptyState: 'No articles found in this category.'
   },
   newsletter: {
     headline: 'Subscribe to our newsletter',

@@ -13,6 +13,7 @@ export default function News() {
   return (
     <div className="flex flex-col min-h-screen">
       <NewsHeroSection 
+        badge={content.hero.badge}
         headline={content.hero.headline}
         subheadline={content.hero.subheadline}
       />
@@ -20,6 +21,7 @@ export default function News() {
         articles={content.articles}
         categories={content.filter.categories}
         allLabel={content.filter.all}
+        emptyState={content.filter.emptyState}
       />
       <NewsNewsletterSection 
         headline={content.newsletter.headline}
