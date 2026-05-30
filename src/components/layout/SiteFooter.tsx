@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Phone, Mail, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
 import { useLang } from '@/lib/i18n';
+import { submitGoogleForm } from '@/lib/googleForms';
 
 const footerTranslations = {
   en: {
@@ -116,14 +117,39 @@ export function SiteFooter() {
   const lang = useLang();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const t = lang === 'en' ? footerTranslations.en : footerTranslations.vi;
 
-  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email.trim() && email.includes('@')) {
+    if (email.trim() && email.includes('@') && !isSubmitting) {
+      setIsSubmitting(true);
+      try {
+        const formId = import.meta.env.VITE_GOOGLE_SUBSCRIBE_FORM_ID;
+        const entries: Record<string, string> = {};
+
+        const emailKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_EMAIL_ENTRY;
+        if (emailKey) entries[emailKey] = email.trim();
+
+        const langKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_LANGUAGE_ENTRY;
+        if (langKey) entries[langKey] = lang;
+
+        const sourceKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_SOURCE_ENTRY;
+        if (sourceKey) entries[sourceKey] = 'footer';
+
+        const pageKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_PAGE_URL_ENTRY;
+        if (pageKey) entries[pageKey] = window.location.href;
+
+        await submitGoogleForm(formId || '', entries);
+
       setIsSubscribed(true);
       setEmail('');
+      } catch (error) {
+        console.error('Footer subscription failed:', error);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -199,7 +225,8 @@ export function SiteFooter() {
                     </div>
                     <button
                       type="submit"
-                      className="px-6 py-3.5 rounded-xl bg-[#1455B5] hover:bg-[#2E7DD8] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm whitespace-nowrap cursor-pointer"
+                      disabled={isSubmitting}
+                      className="px-6 py-3.5 rounded-xl bg-[#1455B5] hover:bg-[#2E7DD8] text-white font-semibold flex items-center justify-center gap-2 shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm whitespace-nowrap cursor-pointer disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                     >
                       <span>{t.newsletter.btn}</span>
                       <ArrowRight className="w-4 h-4" />

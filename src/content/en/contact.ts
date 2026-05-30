@@ -19,6 +19,7 @@ export const contactContent = {
       submitBtn: 'Send message',
       submittingBtn: 'Sending...',
       successMsg: "Thank you! We'll respond within 24 hours.",
+      sendAnotherBtn: 'Send another message',
       errorMsg: 'There was an error sending your message. Please try again.',
       validation: {
         required: 'This field is required',

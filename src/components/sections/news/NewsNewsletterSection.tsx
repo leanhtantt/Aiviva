@@ -37,16 +37,16 @@ export function NewsNewsletterSection({ headline, subheadline, placeholder, butt
         const formId = import.meta.env.VITE_GOOGLE_SUBSCRIBE_FORM_ID;
         const entries: Record<string, string> = {};
         
-        const emailKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_EMAIL;
+        const emailKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_EMAIL_ENTRY;
         if (emailKey) entries[emailKey] = email;
         
-        const langKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_LANG;
+        const langKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_LANGUAGE_ENTRY;
         if (langKey) entries[langKey] = lang;
         
-        const sourceKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_SOURCE;
+        const sourceKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_SOURCE_ENTRY;
         if (sourceKey) entries[sourceKey] = 'news';
 
-        const pageKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_PAGE;
+        const pageKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_PAGE_URL_ENTRY;
         if (pageKey) entries[pageKey] = window.location.href;
 
         await submitGoogleForm(formId || '', entries);

@@ -19,6 +19,7 @@ export const contactContent = {
       submitBtn: 'Gửi tin nhắn',
       submittingBtn: 'Đang gửi...',
       successMsg: "Cảm ơn bạn! Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+      sendAnotherBtn: 'Gửi tin nhắn khác',
       errorMsg: 'Đã có lỗi xảy ra. Vui lòng thử lại.',
       validation: {
         required: 'Trường này là bắt buộc',

@@ -34,6 +34,20 @@ export function ContactForm({ content }: { content: any }) {
     return new URLSearchParams(window.location.search).get(name) || '';
   };
 
+  const getGoogleInquiryType = (type: string) => {
+    const inquiryTypeMap: Record<string, string> = {
+      personal: 'Demo request',
+      b2b: 'Partnership',
+      partner: 'Partnership',
+      investor: 'Investor',
+      press: 'Media',
+      support: 'Support',
+      other: 'Other',
+    };
+
+    return inquiryTypeMap[type] || 'Other';
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -45,34 +59,34 @@ export function ContactForm({ content }: { content: any }) {
       
       const entries: Record<string, string> = {};
       
-      const nameKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_NAME;
+      const nameKey = import.meta.env.VITE_GOOGLE_CONTACT_FULL_NAME_ENTRY;
       if (nameKey) entries[nameKey] = formData.name;
       
-      const emailKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_EMAIL;
+      const emailKey = import.meta.env.VITE_GOOGLE_CONTACT_EMAIL_ENTRY;
       if (emailKey) entries[emailKey] = formData.email;
       
-      const phoneKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_PHONE;
+      const phoneKey = import.meta.env.VITE_GOOGLE_CONTACT_PHONE_ENTRY;
       if (phoneKey) entries[phoneKey] = formData.phone;
       
-      const typeKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_TYPE;
-      if (typeKey) entries[typeKey] = formData.type;
+      const typeKey = import.meta.env.VITE_GOOGLE_CONTACT_INQUIRY_TYPE_ENTRY;
+      if (typeKey) entries[typeKey] = getGoogleInquiryType(formData.type);
       
-      const messageKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_MESSAGE;
+      const messageKey = import.meta.env.VITE_GOOGLE_CONTACT_MESSAGE_ENTRY;
       if (messageKey) entries[messageKey] = formData.message;
       
-      const langKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_LANG;
+      const langKey = import.meta.env.VITE_GOOGLE_CONTACT_LANGUAGE_ENTRY;
       if (langKey) entries[langKey] = lang;
       
-      const pageKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_PAGE;
+      const pageKey = import.meta.env.VITE_GOOGLE_CONTACT_PAGE_URL_ENTRY;
       if (pageKey) entries[pageKey] = window.location.href;
 
-      const utmSourceKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_SOURCE;
+      const utmSourceKey = import.meta.env.VITE_GOOGLE_CONTACT_UTM_SOURCE_ENTRY;
       if (utmSourceKey) entries[utmSourceKey] = getUTMParam('utm_source');
 
-      const utmMediumKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_MEDIUM;
+      const utmMediumKey = import.meta.env.VITE_GOOGLE_CONTACT_UTM_MEDIUM_ENTRY;
       if (utmMediumKey) entries[utmMediumKey] = getUTMParam('utm_medium');
 
-      const utmCampaignKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_CAMPAIGN;
+      const utmCampaignKey = import.meta.env.VITE_GOOGLE_CONTACT_UTM_CAMPAIGN_ENTRY;
       if (utmCampaignKey) entries[utmCampaignKey] = getUTMParam('utm_campaign');
 
       await submitGoogleForm(formId || '', entries);
@@ -104,7 +118,7 @@ export function ContactForm({ content }: { content: any }) {
           </div>
           <h3 className="text-2xl font-bold text-ink mb-4">{content.successMsg}</h3>
           <Button onClick={() => setStatus('idle')} variant="outline" className="mt-8">
-            Send another message
+            {content.sendAnotherBtn}
           </Button>
         </motion.div>
       ) : (
