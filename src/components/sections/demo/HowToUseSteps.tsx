@@ -71,7 +71,7 @@ export function HowToUseSteps({ content }: { content: HowToUseContent }) {
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ delay: idx * 0.2 }}
-                 className="relative flex-1 flex flex-row lg:flex-col items-start lg:items-center pr-0 lg:px-6"
+                 className="relative flex-1 flex flex-row lg:flex-col items-start lg:items-center pr-0 lg:px-6 group"
                >
                  {/* Number Badge */}
                  <div className="w-14 h-14 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[4px] border-canvas shadow-lg flex items-center justify-center text-xl lg:text-2xl font-black text-primary mb-0 lg:mb-8 z-10 mr-6 lg:mr-0 group-hover:scale-110 transition-transform">

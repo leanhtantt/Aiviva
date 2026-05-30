@@ -58,6 +58,15 @@ export const demoContent = {
       { name: 'HRV', value: '45', unit: 'ms', status: 'Average' },
       { name: 'Stress index', value: 'Low', unit: '', status: 'Good' }
     ],
+    visual: {
+      hrStatusText: 'Regular rhythm detected',
+      spo2Progress: 98,
+      spo2LabelMin: '90%',
+      spo2LabelMax: '100%',
+      hrvMarker: 45,
+      stressLevel: 25,
+      stressLabel: 'Calm'
+    },
     cta: {
       free: 'Want continuous tracking? Create a free account',
       premium: 'Upgrade to Premium to unlock all metrics at just $7.99/month'

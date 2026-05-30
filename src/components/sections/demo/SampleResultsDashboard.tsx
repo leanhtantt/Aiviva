@@ -11,11 +11,22 @@ export interface DemoMetric {
   status: string;
 }
 
+export interface VisualConfig {
+  hrStatusText: string;
+  spo2Progress: number;
+  spo2LabelMin: string;
+  spo2LabelMax: string;
+  hrvMarker: number;
+  stressLevel: number;
+  stressLabel: string;
+}
+
 export interface SampleResultsContent {
   headline: string;
   subheadline: string;
   disclaimer: string;
   metrics: DemoMetric[];
+  visual: VisualConfig;
   cta: {
     free: string;
     premium: string;
@@ -23,11 +34,11 @@ export interface SampleResultsContent {
 }
 
 export function SampleResultsDashboard({ content }: { content: SampleResultsContent }) {
-  const hrMetric = content.metrics[0];
-  const spo2Metric = content.metrics[1];
-  const bpMetric = content.metrics[2];
-  const hrvMetric = content.metrics[3];
-  const stressMetric = content.metrics[4];
+  const hrMetric = content.metrics?.[0] || { name: 'Heart rate', value: '--', unit: '', status: '-' };
+  const spo2Metric = content.metrics?.[1] || { name: 'SpO₂', value: '--', unit: '', status: '-' };
+  const bpMetric = content.metrics?.[2] || { name: 'Blood pressure', value: '--', unit: '', status: '-' };
+  const hrvMetric = content.metrics?.[3] || { name: 'HRV', value: '--', unit: '', status: '-' };
+  const stressMetric = content.metrics?.[4] || { name: 'Stress index', value: '--', unit: '', status: '-' };
 
   const getStatusColor = (status: string) => {
     const isGood = status === 'Normal' || status === 'Bình thường' || status === 'Good' || status === 'Tốt';
@@ -111,7 +122,7 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
 
                <div className="mt-auto pt-6 border-t border-mist flex items-center justify-center gap-2 text-sm text-slate">
                  <Activity className="w-4 h-4 text-primary" />
-                 <span>Regular rhythm detected</span>
+                 <span>{content.visual.hrStatusText}</span>
                </div>
             </motion.div>
 
@@ -142,11 +153,11 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
                 {/* Linear progress gauge */}
                 <div className="mt-auto">
                    <div className="w-full bg-mist rounded-full h-2 mb-2">
-                     <div className="bg-sky h-2 rounded-full" style={{ width: '98%' }}></div>
+                     <div className="bg-sky h-2 rounded-full" style={{ width: `${content.visual.spo2Progress}%` }}></div>
                    </div>
                    <div className="flex justify-between text-xs text-slate font-medium">
-                     <span>90%</span>
-                     <span>100%</span>
+                     <span>{content.visual.spo2LabelMin}</span>
+                     <span>{content.visual.spo2LabelMax}</span>
                    </div>
                 </div>
               </motion.div>
@@ -203,7 +214,7 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
                 </div>
                 <div className="mt-auto relative w-full h-8 flex items-center">
                    <div className="w-full h-2 bg-gradient-to-r from-warning via-success to-primary rounded-full opacity-50"></div>
-                   <div className="absolute left-[45%] w-3 h-4 bg-ink rounded-full border-2 border-white shadow-sm -translate-x-1/2"></div>
+                   <div className="absolute w-3 h-4 bg-ink rounded-full border-2 border-white shadow-sm -translate-x-1/2" style={{ left: `${content.visual.hrvMarker}%` }}></div>
                 </div>
               </motion.div>
 
@@ -230,8 +241,9 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
                 </div>
                 <div className="mt-auto flex items-center gap-2">
                    <div className="flex-1 h-3 rounded-full bg-mist overflow-hidden flex">
-                     <div className="w-1/4 bg-success"></div>
+                     <div className="bg-success h-full" style={{ width: `${content.visual.stressLevel}%` }}></div>
                    </div>
+                   <span className="text-xs font-bold text-slate">{content.visual.stressLabel}</span>
                 </div>
               </motion.div>
 

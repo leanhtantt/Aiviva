@@ -58,6 +58,15 @@ export const demoContent = {
       { name: 'HRV', value: '45', unit: 'ms', status: 'Trung bình' },
       { name: 'Chỉ số căng thẳng', value: 'Thấp', unit: '', status: 'Tốt' }
     ],
+    visual: {
+      hrStatusText: 'Phát hiện nhịp đều',
+      spo2Progress: 98,
+      spo2LabelMin: '90%',
+      spo2LabelMax: '100%',
+      hrvMarker: 45,
+      stressLevel: 25,
+      stressLabel: 'Bình tĩnh'
+    },
     cta: {
       free: 'Muốn theo dõi liên tục? Đăng ký tài khoản miễn phí',
       premium: 'Nâng cấp Premium để mở khóa toàn bộ chỉ số với chỉ 199K/tháng'
