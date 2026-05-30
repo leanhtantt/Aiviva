@@ -15,7 +15,7 @@ interface NewsNewsletterSectionProps {
 export function NewsNewsletterSection({ headline, subheadline, placeholder, buttonText, successMessage }: NewsNewsletterSectionProps) {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     return () => {
