@@ -46,6 +46,9 @@ export function NewsNewsletterSection({ headline, subheadline, placeholder, butt
         const sourceKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_SOURCE;
         if (sourceKey) entries[sourceKey] = 'news';
 
+        const pageKey = import.meta.env.VITE_GOOGLE_SUBSCRIBE_ENTRY_PAGE;
+        if (pageKey) entries[pageKey] = window.location.href;
+
         await submitGoogleForm(formId || '', entries);
         
         setIsSubscribed(true);

@@ -17,6 +17,7 @@ interface ImportMetaEnv {
   readonly VITE_GOOGLE_SUBSCRIBE_ENTRY_EMAIL?: string;
   readonly VITE_GOOGLE_SUBSCRIBE_ENTRY_LANG?: string;
   readonly VITE_GOOGLE_SUBSCRIBE_ENTRY_SOURCE?: string;
+  readonly VITE_GOOGLE_SUBSCRIBE_ENTRY_PAGE?: string;
 }
 
 interface ImportMeta {
