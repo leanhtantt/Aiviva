@@ -6,7 +6,8 @@ function stripLang(pathname: string) {
 }
 
 export function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const location = useLocation();
+  const { pathname, hash, state } = location;
   const prevPathRef = useRef(pathname);
 
   useEffect(() => {
@@ -23,16 +24,19 @@ export function ScrollToTop() {
       return;
     }
     
+    // Check if the navigation explicitly requested to prevent scroll reset
+    const preventScrollReset = (state as any)?.preventScrollReset === true;
+    
     const prevNormalized = stripLang(prevPathRef.current);
     const nextNormalized = stripLang(pathname);
 
-    // Only scroll to top if the normalized path changed (navigating to a different page)
-    if (prevNormalized !== nextNormalized) {
+    // Only scroll to top if the normalized path changed (navigating to a different page) and not prevented
+    if (prevNormalized !== nextNormalized && !preventScrollReset) {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
 
     prevPathRef.current = pathname;
-  }, [pathname, hash]);
+  }, [pathname, hash, state]);
 
   return null;
 }

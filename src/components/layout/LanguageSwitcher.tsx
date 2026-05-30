@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
         if (nextArticle) {
           pathParts[1] = nextLang;
           pathParts[3] = nextArticle.slug;
-          navigate(pathParts.join('/'));
+          navigate(pathParts.join('/'), { state: { preventScrollReset: true } });
           return;
         }
       }
@@ -35,15 +35,15 @@ export function LanguageSwitcher() {
       // Fallback
       pathParts[1] = nextLang;
       pathParts.length = 3;
-      navigate(pathParts.join('/'));
+      navigate(pathParts.join('/'), { state: { preventScrollReset: true } });
       return;
     }
 
     if (pathParts[1] === 'en' || pathParts[1] === 'vi') {
       pathParts[1] = nextLang;
-      navigate(pathParts.join('/'));
+      navigate(pathParts.join('/'), { state: { preventScrollReset: true } });
     } else {
-      navigate(`/${nextLang}`);
+      navigate(`/${nextLang}`, { state: { preventScrollReset: true } });
     }
   };
 

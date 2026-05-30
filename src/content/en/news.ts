@@ -27,6 +27,32 @@ export const newsContentEn: NewsContent = {
   },
   articles: [
     {
+      id: 'en-0',
+      translationKey: 'ebola-risk-vietnam',
+      slug: 'risk-of-ebola-entering-vietnam',
+      category: 'Health',
+      title: 'Risk of Ebola Entering Vietnam, Ministry of Health Urgently Requests Epidemic Prevention',
+      excerpt: 'Faced with the risk of Ebola entering Vietnam, the Ministry of Health requires hospitals to strengthen epidemic prevention, ready to isolate, receive, and treat suspected cases.',
+      date: 'May 30, 2026',
+      readTime: '3 min read',
+      featured: true,
+      image: '/assets/images/news/ebola-risk-vietnam/thumb.jpg',
+      heroImage: '/assets/images/news/ebola-risk-vietnam/hero.jpg',
+      content: [
+        { type: 'paragraph', text: 'The Ministry of Health has just issued an urgent dispatch to its affiliated units and the Departments of Health of provinces and cities on strengthening the prevention and control of Ebola in the face of complex developments in the world and the risk of entering the country\'s health system.' },
+        { type: 'heading', text: 'Strengthening Preventive Measures' },
+        { type: 'paragraph', text: 'To proactively prevent the epidemic, the Ministry of Health requires medical examination and treatment facilities to strictly implement the following measures:' },
+        { type: 'list', items: [
+          'Strengthen surveillance, early detection of suspected cases at border gates and medical facilities',
+          'Prepare isolation areas and personal protective equipment to receive and treat suspected cases according to regulations',
+          'Ensure adequate supply of medicines, medical equipment, and disinfectant chemicals'
+        ]},
+        { type: 'paragraph', text: 'Medical facilities also need to develop detailed plans to prevent cross-infection in hospitals, ensuring absolute safety for patients and medical staff.' },
+        { type: 'quote', text: 'Strict surveillance and preparedness of response plans are key factors in preventing the disease from entering and spreading in the community.' },
+        { type: 'paragraph', text: 'The Ministry of Health emphasizes the importance of continuously updating the latest treatment regimens and epidemic prevention guidelines from the World Health Organization (WHO).' }
+      ]
+    },
+    {
       id: 'en-1',
       translationKey: 'platform-launch',
       slug: 'aiviva-launches-new-telehealth-platform',
@@ -35,7 +61,6 @@ export const newsContentEn: NewsContent = {
       excerpt: 'Our new platform integrates advanced AI scanning for seamless vitals monitoring directly from user smartphones.',
       date: 'May 28, 2026',
       readTime: '5 min read',
-      featured: true,
       content: [
         { type: 'paragraph', text: 'We are thrilled to announce the launch of our next-generation telehealth platform, designed to enhance remote healthcare through advanced artificial intelligence.' },
         { type: 'heading', text: 'Seamless Vital Monitoring' },
