@@ -30,6 +30,10 @@ export function ContactForm({ content }: { content: any }) {
     return Object.keys(newErrors).length === 0;
   };
 
+  const getUTMParam = (name: string) => {
+    return new URLSearchParams(window.location.search).get(name) || '';
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -61,6 +65,15 @@ export function ContactForm({ content }: { content: any }) {
       
       const pageKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_PAGE;
       if (pageKey) entries[pageKey] = window.location.href;
+
+      const utmSourceKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_SOURCE;
+      if (utmSourceKey) entries[utmSourceKey] = getUTMParam('utm_source');
+
+      const utmMediumKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_MEDIUM;
+      if (utmMediumKey) entries[utmMediumKey] = getUTMParam('utm_medium');
+
+      const utmCampaignKey = import.meta.env.VITE_GOOGLE_CONTACT_ENTRY_UTM_CAMPAIGN;
+      if (utmCampaignKey) entries[utmCampaignKey] = getUTMParam('utm_campaign');
 
       await submitGoogleForm(formId || '', entries);
       
