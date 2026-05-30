@@ -68,8 +68,10 @@ export const demoContent = {
       stressLabel: 'Bình tĩnh'
     },
     cta: {
-      free: 'Muốn theo dõi liên tục? Đăng ký tài khoản miễn phí',
-      premium: 'Nâng cấp Premium để mở khóa toàn bộ chỉ số với chỉ 199K/tháng'
+      freeLabel: 'Muốn theo dõi liên tục?',
+      freeBtn: 'Đăng ký tài khoản miễn phí',
+      premiumLabel: 'Mở khóa toàn bộ chỉ số với chỉ 199K/tháng',
+      premiumBtn: 'Nâng cấp Premium'
     }
   }
 };

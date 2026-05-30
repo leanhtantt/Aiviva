@@ -28,8 +28,10 @@ export interface SampleResultsContent {
   metrics: DemoMetric[];
   visual: VisualConfig;
   cta: {
-    free: string;
-    premium: string;
+    freeLabel: string;
+    freeBtn: string;
+    premiumLabel: string;
+    premiumBtn: string;
   };
 }
 
@@ -50,12 +52,6 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
 
   return (
     <Section id="sample-results" variant="surface" className="py-20 lg:py-32 relative overflow-hidden">
-      {/* Background gradients for premium feel */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-1/2 h-1/2 bg-sky/5 rounded-full blur-3xl" />
-      </div>
-
       <div className="container mx-auto px-4 lg:px-[var(--container-padding-desktop)] relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
@@ -80,18 +76,25 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
 
         <div className="max-w-6xl mx-auto relative">
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            {/* Main Hero Card - Heart Rate */}
-            <motion.div 
+          {/* iPad Mockup Container */}
+          <div className="relative mx-auto rounded-[2.5rem] lg:rounded-[3rem] border-[12px] lg:border-[16px] border-ink shadow-2xl mb-12 bg-canvas overflow-hidden">
+            
+            {/* Camera notch / details */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-24 sm:w-32 h-5 sm:h-6 bg-ink rounded-b-xl flex items-center justify-center gap-2 z-30">
+               <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+               <div className="w-8 h-1 rounded-full bg-white/10 hidden sm:block"></div>
+            </div>
+
+            {/* Inner Screen Area */}
+            <div className="bg-surface w-full h-full p-4 sm:p-6 lg:p-8 pt-8 sm:pt-10 lg:pt-12 overflow-y-auto max-h-[80vh] lg:max-h-none scrollbar-hide">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+                {/* Main Hero Card - Heart Rate */}
+                <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="lg:col-span-1 bg-white rounded-[2.5rem] p-8 border border-border shadow-xl shadow-primary/5 flex flex-col relative overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-shadow duration-300"
             >
-               <div className="absolute top-0 right-0 p-6 opacity-10 pointer-events-none">
-                  <Heart className="w-48 h-48 text-primary" />
-               </div>
-               
                <div className="flex justify-between items-start mb-8 relative z-10">
                  <div className="flex items-center gap-3">
                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-sky flex items-center justify-center text-white shadow-lg shadow-primary/20">
@@ -104,12 +107,12 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
                  </span>
                </div>
 
-               <div className="flex-1 flex flex-col items-center justify-center py-8 relative z-10">
+               <div className="flex-1 flex flex-col items-center justify-center py-8 relative z-10 -mt-16">
                   <div className="relative flex items-center justify-center w-full">
                     {/* Semi-circular gauge mock */}
-                    <svg className="w-full h-auto max-w-[200px]" viewBox="0 0 100 50">
-                      <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-canvas" />
-                      <path d="M 10 50 A 40 40 0 0 1 70 15" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-primary drop-shadow-[0_0_8px_rgba(20,85,181,0.5)]" />
+                    <svg className="w-[220px] h-auto" viewBox="0 0 100 50">
+                      <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-mist" />
+                      <path d="M 10 50 A 40 40 0 0 1 70 15" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-primary" />
                     </svg>
                     <div className="absolute bottom-0 text-center">
                       <div className="flex items-end justify-center gap-1">
@@ -248,6 +251,9 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
               </motion.div>
 
             </div>
+            
+            </div>
+          </div>
           </div>
 
           <motion.div 
@@ -266,14 +272,21 @@ export function SampleResultsDashboard({ content }: { content: SampleResultsCont
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-gradient-to-r from-primary/5 to-sky/5 p-8 rounded-[2.5rem] border border-primary/10"
+            className="bg-white rounded-2xl border border-border flex flex-col sm:flex-row shadow-sm max-w-4xl mx-auto divide-y sm:divide-y-0 sm:divide-x divide-mist text-center sm:text-left overflow-hidden"
           >
-            <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 font-semibold bg-white">
-              {content.cta.free}
-            </Button>
-            <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
-              {content.cta.premium}
-            </Button>
+            <div className="flex-1 p-8 md:p-10 flex flex-col items-center justify-center text-center gap-5 hover:bg-slate-50/50 transition-colors">
+               <span className="text-lg text-slate font-medium">{content.cta.freeLabel}</span>
+               <Button variant="outline" size="lg" className="w-full sm:w-auto font-semibold px-8">
+                  {content.cta.freeBtn}
+               </Button>
+            </div>
+            
+            <div className="flex-1 p-8 md:p-10 flex flex-col items-center justify-center text-center gap-5 hover:bg-slate-50/50 transition-colors">
+               <span className="text-lg text-ink font-bold">{content.cta.premiumLabel}</span>
+               <Button variant="primary" size="lg" className="w-full sm:w-auto font-bold px-8 shadow-md shadow-primary/20 hover:-translate-y-0.5 transition-transform">
+                  {content.cta.premiumBtn}
+               </Button>
+            </div>
           </motion.div>
 
         </div>

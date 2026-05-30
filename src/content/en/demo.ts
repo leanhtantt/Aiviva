@@ -68,8 +68,10 @@ export const demoContent = {
       stressLabel: 'Calm'
     },
     cta: {
-      free: 'Want continuous tracking? Create a free account',
-      premium: 'Upgrade to Premium to unlock all metrics at just $7.99/month'
+      freeLabel: 'Want continuous tracking?',
+      freeBtn: 'Create a free account',
+      premiumLabel: 'Unlock all metrics for just $7.99/month',
+      premiumBtn: 'Upgrade to Premium'
     }
   }
 };
